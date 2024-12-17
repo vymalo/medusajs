@@ -1,0 +1,26 @@
+{
+  "name": "@vymalo/medusa-keycloak",
+  "version": "1.0.4",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vymalo/medusajs.git",
+    "directory": "packages/vymalo-keycloak"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2",
+    "simple-oauth2": "^5.1.0"
+  },
+  "devDependencies": {
+    "@medusajs/framework": "^2.1.1",
+    "@types/jsonwebtoken": "^9.0.7",
+    "@types/simple-oauth2": "^5.0.7"
+  }
+}

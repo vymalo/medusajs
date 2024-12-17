@@ -1,0 +1,5 @@
+node_modules/
+src/
+openapi.json
+openapi-ts.config.ts
+tsconfig.json

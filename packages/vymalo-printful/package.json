@@ -1,0 +1,46 @@
+{
+  "name": "@vymalo/medusa-printful",
+  "version": "1.0.7",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vymalo/medusajs.git",
+    "directory": "packages/vymalo-printful"
+  },
+  "main": "./dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/index.js",
+    "./api/*": "./dist/api/*.js",
+    "./subscribers/*": "./dist/subscribers/*.js",
+    "./workflows/*": "./dist/workflows/*.js",
+    "./jobs/*": "./dist/jobs/*.js",
+    "./*": "./dist/modules/*/index.js"
+  },
+  "scripts": {
+    "prod:build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build",
+    "gen:printful": "cross-env rimraf src/core/generated/printful && openapi-ts",
+    "build": "yarn gen:printful && yarn prod:build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@medusajs/framework": "^2.1.1",
+    "@medusajs/medusa": "^2.1.1",
+    "axios": "^1.7.8",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.55.1",
+    "@types/lodash": "^4.17.13",
+    "cross-env": "^7.0.3",
+    "rimraf": "^6.0.1"
+  },
+  "files": [
+    "dist"
+  ]
+}

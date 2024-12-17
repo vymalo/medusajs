@@ -1,0 +1,26 @@
+{
+  "name": "@vymalo/ui-preset",
+  "version": "1.0.2",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vymalo/medusajs.git",
+    "directory": "packages/vymalo-ui-preset"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/forms": "^0.5.9",
+    "@tailwindcss/typography": "^0.5.15",
+    "daisyui": "^4.12.20",
+    "tailwind-extended-shadows": "^0.4.1",
+    "tailwindcss": "*",
+    "tailwindcss-radix": "^3.0.5"
+  }
+}

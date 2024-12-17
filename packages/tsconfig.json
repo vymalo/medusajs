@@ -1,0 +1,23 @@
+{
+  "files": [],
+  "references": [
+    {
+      "path": "vymalo-keycloak"
+    },
+    {
+      "path": "vymalo-mail"
+    },
+    {
+      "path": "vymalo-meilisearch"
+    },
+    {
+      "path": "vymalo-minio"
+    },
+    {
+      "path": "vymalo-printful"
+    },
+    {
+      "path": "vymalo-ui-preset"
+    }
+  ]
+}

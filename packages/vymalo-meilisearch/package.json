@@ -1,0 +1,33 @@
+{
+  "name": "@vymalo/medusa-meilisearch",
+  "version": "1.0.11",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vymalo/medusajs.git",
+    "directory": "packages/vymalo-meilisearch"
+  },
+  "main": "dist/index.js",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": "./dist/index.js",
+    "./subscribers/*": "./dist/subscribers/*.js",
+    "./workflows/*": "./dist/workflows/*.js",
+    "./jobs/*": "./dist/jobs/*.js"
+  },
+  "scripts": {
+    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "meilisearch": "^0.46.0"
+  },
+  "devDependencies": {
+    "@medusajs/framework": "^2.1.1",
+    "@medusajs/types": "^2.1.1",
+    "@medusajs/utils": "^2.1.1",
+    "awilix": "^12.0.4"
+  }
+}
