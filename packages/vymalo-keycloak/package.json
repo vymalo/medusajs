@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-keycloak",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -10,8 +10,21 @@
   "scripts": {
     "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "keycloak",
+    "medusa-keycloak",
+    "auth",
+    "authentication",
+    "oauth2",
+    "medusa-oauth2"
+  ],
+  "author": {
+    "name": "Vymalo",
+    "email": "selastlambou@gmail.com",
+    "url": "https://github.com/vymalo"
+  },
   "license": "ISC",
   "description": "",
   "dependencies": {

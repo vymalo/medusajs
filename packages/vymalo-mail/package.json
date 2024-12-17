@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-mail",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -10,8 +10,19 @@
   "scripts": {
     "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "medusa-mail",
+    "email",
+    "email-templates",
+    "preview-email"
+  ],
+  "author": {
+    "name": "Vymalo",
+    "email": "selastlambou@gmail.com",
+    "url": "https://github.com/vymalo"
+  },
   "license": "ISC",
   "description": "",
   "dependencies": {

@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/ui-preset",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -10,9 +10,23 @@
   "scripts": {
     "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "medusa-commerce",
+    "medusa-commerce-plugin",
+    "ui-preset",
+    "tailwindcss",
+    "daisyui",
+    "tailwind-extended-shadows",
+    "tailwindcss-radix"
+  ],
+  "author": {
+    "name": "Vymalo",
+    "email": "selastlambou@gmail.com",
+    "url": "https://github.com/vymalo"
+  },
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",

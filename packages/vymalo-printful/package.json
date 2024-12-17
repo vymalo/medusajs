@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-printful",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -24,8 +24,17 @@
   "publishConfig": {
     "access": "public"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "medusa-printful",
+    "printful"
+  ],
+  "author": {
+    "name": "Vymalo",
+    "email": "selastlambou@gmail.com",
+    "url": "https://github.com/vymalo"
+  },
   "license": "ISC",
   "description": "",
   "dependencies": {

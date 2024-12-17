@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-meilisearch",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -17,8 +17,19 @@
   "scripts": {
     "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "medusa",
+    "medusajs",
+    "meilisearch",
+    "medusa-meilisearch",
+    "medusa-search",
+    "search"
+  ],
+  "author": {
+    "name": "Vymalo",
+    "email": "selastlambou@gmail.com",
+    "url": "https://github.com/vymalo"
+  },
   "license": "ISC",
   "description": "",
   "dependencies": {
