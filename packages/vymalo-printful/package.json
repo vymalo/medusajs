@@ -19,7 +19,7 @@
   "scripts": {
     "prod:build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build",
     "gen:printful": "cross-env rimraf src/core/generated/printful && openapi-ts",
-    "build": "yarn gen:printful && yarn prod:build"
+    "build": "npm run gen:printful && npm run prod:build"
   },
   "publishConfig": {
     "access": "public"
