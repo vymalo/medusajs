@@ -15,7 +15,7 @@
     "./jobs/*": "./dist/jobs/*.js"
   },
   "scripts": {
-    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+    "build": "rm -rf dist && rm -rf tsconfig.tsbuildinfo && tsc --build"
   },
   "keywords": [],
   "author": "",
