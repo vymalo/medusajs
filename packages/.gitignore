@@ -1,6 +1,8 @@
-**/dist
+dist
 
 tsconfig.tsbuildinfo
 **/tsconfig.tsbuildinfo
 
 generated
+
+.yarn

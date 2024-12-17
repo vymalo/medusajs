@@ -17,7 +17,7 @@
     "./*": "./dist/modules/*/index.js"
   },
   "scripts": {
-    "prod:build": "rm -rf dist && rm -rf tsconfig.tsbuildinfo && tsc --build",
+    "prod:build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build",
     "gen:printful": "cross-env rimraf src/core/generated/printful && openapi-ts",
     "build": "yarn gen:printful && yarn prod:build"
   },

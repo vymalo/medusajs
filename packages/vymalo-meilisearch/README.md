@@ -1,20 +1,17 @@
-# MedusaJS Mail templates
+# MedusaJS meilisearch
 
-This package provides a set of mail templates for MedusaJS.
-It is based on 
-- email-templates
-- preview-email
+Index your MedusaJS data in Meilisearch
 
 ## Installation
 
 ```bash
-npm install @vymalo/medusa-mail
+npm install @vymalo/medusa-meilisearch
 ```
 
 or if using yarn
 
 ```bash
-yarn add @vymalo/medusa-mail
+yarn add @vymalo/medusa-meilisearch
 ```
 
 ## Usage
@@ -24,26 +21,43 @@ To use this plugin, you should add it into the `modules` section of your MedusaJ
   modules: [
     ...
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: '@vymalo/medusa-meilisearch',
       options: {
-        providers: [
-          {
-            resolve: `@vymalo/medusa-mail`,
-            id: "ssegning",
-            options: {
-              channels: ["email"],
-              message: {
-                from: "no-reply@vymalo.com",
-              },
-              send: process.env.NODE === "production",
-              preview: false,
-              transport: "smtp://localhost:1025",
+        config: {
+          host: process.env.MEILISEARCH_HOST,
+          apiKey: process.env.MEILISEARCH_API_KEY,
+        },
+        settings: {
+          [SearchUtils.indexTypes.PRODUCTS]: {
+            indexSettings: {
+                searchableAttributes: ['title', 'description', 'variant_sku'],
+                displayedAttributes: ['title', 'description', 'variant_sku', 'thumbnail', 'handle'],
             },
+            primaryKey: 'id',
           },
-        ],
+        },
       },
     },
     ...
 ```
 
-The options are from the nodemailer package, so you can use any of the options from there.
+## Hack
+Because it's not yet clear how to handle plugins in MedusaJS, we have to hack a bit to get this working.
+First:
+
+```bash
+mkdir -p plugins/printful-hack
+ln -s node_modules/@vymalo/medusa-meilisearch/dist plugins/printful-hack/src
+# Write a fake package.json file in the plugins/printful-hack directory
+echo "{\"name\":\"meilisearch-hack\",\"version\":\"1.0.0\"}" > plugins/printful-hack/package.json
+```
+
+In your `medusa-config.js` file, add the following code:
+```typescript
+plugins: [
+  ...
+  {
+    resolve: `./plugins/meilisearch-hack`, // TODO: Change this to the correct path
+    options: {}, 
+  },
+```
