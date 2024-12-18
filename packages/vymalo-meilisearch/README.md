@@ -46,10 +46,10 @@ Because it's not yet clear how to handle plugins in MedusaJS, we have to hack a 
 First:
 
 ```bash
-mkdir -p plugins/printful-hack
-ln -s node_modules/@vymalo/medusa-meilisearch/dist plugins/printful-hack/src
-# Write a fake package.json file in the plugins/printful-hack directory
-echo "{\"name\":\"meilisearch-hack\",\"version\":\"1.0.0\"}" > plugins/printful-hack/package.json
+mkdir -p plugins/meilisearch-hack
+ln -s node_modules/@vymalo/medusa-meilisearch/dist plugins/meilisearch-hack/src
+# Write a fake package.json file in the plugins/meilisearch-hack directory
+echo "{\"name\":\"meilisearch-hack\",\"version\":\"1.0.0\"}" > plugins/meilisearch-hack/package.json
 ```
 
 In your `medusa-config.js` file, add the following code:

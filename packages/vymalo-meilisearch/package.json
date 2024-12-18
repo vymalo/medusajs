@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-meilisearch",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -30,7 +30,7 @@
     "email": "selastlambou@gmail.com",
     "url": "https://github.com/vymalo"
   },
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "meilisearch": "^0.46.0"

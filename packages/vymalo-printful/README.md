@@ -59,7 +59,7 @@ First:
 
 ```bash
 mkdir -p plugins/printful-hack
-ln -s node_modules/@vymalo/medusa-meilisearch/dist plugins/printful-hack/src
+ln -s node_modules/@vymalo/medusa-printful/dist plugins/printful-hack/src
 # Write a fake package.json file in the plugins/printful-hack directory
 echo "{\"name\":\"printful-hack\",\"version\":\"1.0.0\"}" > plugins/printful-hack/package.json
 ```

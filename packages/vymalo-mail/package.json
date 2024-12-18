@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-mail",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -23,7 +23,7 @@
     "email": "selastlambou@gmail.com",
     "url": "https://github.com/vymalo"
   },
-  "license": "ISC",
+  "license": "MIT",
   "description": "",
   "dependencies": {
     "email-templates": "^12.0.1",
