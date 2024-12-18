@@ -1,51 +1,62 @@
 import { fontFamily } from 'tailwindcss/defaultTheme';
 import type { Config } from 'tailwindcss/types/config';
-import { blue, green, grey, orange, purple, red } from '@mui/material/colors';
+import { colord } from 'colord';
+import {
+	blue,
+	green,
+	grey,
+	orange,
+	purple,
+	red,
+	teal,
+} from '@mui/material/colors';
+
+const mainColor = purple;
 
 const coreVymaloTheme = {
-	primary: purple[500], // Harmonized magenta
-	'primary-content': purple[50], // Lighter for better contrast
-	secondary: green[700], // Darker green for a less vibrant feel
-	'secondary-content': green[100], // Softer green for contrast
-	accent: green[500], // Muted green to match the secondary
-	'accent-content': green[50], // Softer light green
-	neutral: grey[900], // Slightly lighter neutral for smoother look
-	'neutral-content': grey[800], // Softer contrast with neutral
-	'base-100': grey[900], // Base color for a dark theme
-	'base-200': grey[800],
-	'base-300': grey[700],
-	'base-content': grey[50], // Lighter for better legibility
-	info: blue[700], // Darker blue for a calmer feel
-	'info-content': blue[50], // Softer light blue for content
-	success: green[600], // Harmonized green
-	'success-content': green[50], // Lighter success content
-	warning: orange[800], // Slightly softened orange
-	'warning-content': orange[100], // Light beige for contrast
-	error: red[800], // Harmonized red
-	'error-content': red[50], // Softer pinkish tone for content
+	primary: mainColor[500],
+	'primary-content': mainColor[50],
+	secondary: teal[400],
+	'secondary-content': teal[100],
+	accent: green[500],
+	'accent-content': green[50],
+	neutral: grey[900],
+	'neutral-content': grey[800],
+	'base-100': colord(mainColor[900]).darken(0.2).desaturate(0.45).toHex(),
+	'base-200': colord(mainColor[900]).darken(0.215).desaturate(0.47).toHex(),
+	'base-300': colord(mainColor[900]).darken(0.23).desaturate(0.5).toHex(),
+	'base-content': colord(mainColor[50]).lighten(0.05).toHex(),
+	info: blue[700],
+	'info-content': blue[50],
+	success: green[600],
+	'success-content': green[50],
+	warning: orange[800],
+	'warning-content': orange[100],
+	error: red[800],
+	'error-content': red[50],
 };
 
 const lightVymaloTheme = {
-	primary: purple[400], // Slightly softer magenta to match the dark theme
-	'primary-content': purple[50], // Lighter for contrast
-	secondary: red[700], // Softened red
-	'secondary-content': red[100], // Softer light red for readability
-	accent: green[400], // Muted green to harmonize with dark accent
-	'accent-content': green[50], // Softened green content
-	neutral: grey[50], // Lightened neutral for consistency
-	'neutral-content': grey[900], // Dark content for neutral contrast
-	'base-100': grey[50], // Clean white for base
-	'base-200': grey[100],
-	'base-300': grey[200],
-	'base-content': grey[900], // Darker content for contrast
-	info: blue[400], // Softer blue for less harsh info
-	'info-content': blue[50], // Softer light blue for content
-	success: green[500], // Softer green for success
-	'success-content': green[50], // Lighter content for contrast
-	warning: orange[600], // Harmonized with dark theme
-	'warning-content': orange[50], // Light beige for contrast
-	error: red[500], // Softer red for light theme
-	'error-content': red[50], // Lightened for contrast
+	primary: mainColor[400],
+	'primary-content': mainColor[50],
+	secondary: teal[700],
+	'secondary-content': teal[100],
+	accent: green[400],
+	'accent-content': green[50],
+	neutral: grey[50],
+	'neutral-content': grey[900],
+	'base-100': colord(mainColor[50]).lighten(0.04).desaturate(0.3).toHex(),
+	'base-200': colord(mainColor[50]).lighten(0.02).desaturate(0.4).toHex(),
+	'base-300': colord(mainColor[50]).lighten(0.01).desaturate(0.5).toHex(),
+	'base-content': mainColor[900],
+	info: blue[400],
+	'info-content': blue[50],
+	success: green[500],
+	'success-content': green[50],
+	warning: orange[600],
+	'warning-content': orange[50],
+	error: red[500],
+	'error-content': red[50],
 };
 
 const basePreset: Omit<Config, 'content'> = {

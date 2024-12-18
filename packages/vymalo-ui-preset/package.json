@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/ui-preset",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -33,6 +33,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.9",
     "@tailwindcss/typography": "^0.5.15",
+    "colord": "^2.9.3",
     "daisyui": "^4.12.22",
     "tailwind-extended-shadows": "^0.4.1",
     "tailwindcss": "*",
