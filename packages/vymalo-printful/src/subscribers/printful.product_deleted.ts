@@ -1,6 +1,6 @@
 import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework';
 import type { EventType, WebhookWithData } from '../types';
-import { ContainerRegistrationKeys } from '@medusajs/framework/utils';
+import { ContainerRegistrationKeys } from '@medusajs/utils';
 import { PrintfulModules } from '../utils';
 
 type Data = Extract<

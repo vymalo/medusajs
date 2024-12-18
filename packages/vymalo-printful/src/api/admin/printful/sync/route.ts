@@ -1,5 +1,5 @@
 import type { MedusaRequest, MedusaResponse } from '@medusajs/framework/http';
-import { ContainerRegistrationKeys, Modules } from '@medusajs/framework/utils';
+import { ContainerRegistrationKeys, Modules } from '@medusajs/utils';
 
 export const POST = async (req: MedusaRequest<never>, res: MedusaResponse) => {
 	const logger = req.scope.resolve(ContainerRegistrationKeys.LOGGER);

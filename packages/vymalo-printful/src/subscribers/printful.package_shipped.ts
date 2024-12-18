@@ -1,6 +1,6 @@
 import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework';
 import type { EventType, WebhookWithData } from '../types';
-import { ContainerRegistrationKeys, Modules } from '@medusajs/framework/utils';
+import { ContainerRegistrationKeys, Modules } from '@medusajs/utils';
 import { map, filter } from 'lodash';
 import { RegisterOrderShipmentDTO } from '@medusajs/types/dist/order/mutations';
 

@@ -1,6 +1,6 @@
-import type { LoaderOptions } from '@medusajs/framework/types';
+import type { LoaderOptions } from '@medusajs/types';
 import { PrintfulOptions } from '../../../types';
-import { Modules } from '@medusajs/framework/utils';
+import { Modules } from '@medusajs/utils';
 
 export default async function ensurePrintfulTagSetup({
 	logger,

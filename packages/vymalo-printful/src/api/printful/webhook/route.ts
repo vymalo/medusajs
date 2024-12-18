@@ -1,6 +1,6 @@
 import type { MedusaRequest, MedusaResponse } from '@medusajs/framework/http';
 import type { EventType, WebhookType, WebhookWithData } from '../../../types';
-import { ContainerRegistrationKeys } from '@medusajs/framework/utils';
+import { ContainerRegistrationKeys } from '@medusajs/utils';
 
 export const POST = async (
 	req: MedusaRequest<WebhookWithData>,

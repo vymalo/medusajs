@@ -1,29 +1,20 @@
-import { AbstractFulfillmentProviderService } from '@medusajs/framework/utils';
-import type { FulfillmentOption, Logger } from '@medusajs/framework/types';
-import type PrintFulService from '../../printful/services/printful-service';
-import type { Order } from '../../../core';
+import { AbstractFulfillmentProviderService } from '@medusajs/utils';
+import type {
+	FulfillmentOption,
+	IProductModuleService,
+	Logger,
+} from '@medusajs/types';
+import type { ItemInfo, Order } from '../../../core';
+import type {
+	CalculatedShippingOptionPrice,
+	CalculateShippingOptionPriceDTO,
+} from '@medusajs/types';
+import { PrintfulModules } from '../../../utils';
+import type { IPrintfulService } from '../../../types';
 
 type InjectedDependencies = {
 	logger: Logger;
-	printful: PrintFulService;
-};
-
-type Context = {
-	shipping_address: {
-		address_1: string;
-		city: string;
-		country_code: string;
-		postal_code: string;
-		phone: string;
-	};
-	items: {
-		variant: {
-			metadata: {
-				printful_catalog_variant_id: string;
-			};
-		};
-		quantity: number;
-	}[];
+	[PrintfulModules.printful]: IPrintfulService;
 };
 
 type PrintfulFullfillmentData = {
@@ -34,7 +25,8 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 	static identifier = 'printful';
 
 	private readonly logger_: Logger;
-	private readonly printfulService: PrintFulService;
+	private readonly printfulService: IPrintfulService;
+	private readonly productModuleService: IProductModuleService;
 
 	constructor({ logger, printful }: InjectedDependencies) {
 		super();
@@ -52,10 +44,10 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 	}
 
 	public async calculatePrice(
-		optionData: Record<string, unknown>,
-		data: Record<string, unknown>,
-		context: Context
-	): Promise<number> {
+		optionData: CalculateShippingOptionPriceDTO['optionData'],
+		data: CalculateShippingOptionPriceDTO['data'],
+		context: CalculateShippingOptionPriceDTO['context']
+	): Promise<CalculatedShippingOptionPrice> {
 		this.logger_.info('calculatePrice');
 		console.log(optionData, data, context);
 		try {
@@ -67,10 +59,13 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 					zip: context.shipping_address.postal_code,
 					phone: context.shipping_address.phone || null,
 				},
-				items: context.items.map((item) => ({
-					variant_id: item.variant.metadata.printful_catalog_variant_id,
-					quantity: item.quantity,
-				})),
+				items: context.items.map(
+					(item) =>
+						({
+							variant_id: item.variant_id,
+							quantity: item.quantity,
+						}) as ItemInfo
+				),
 			});
 
 			// return the rate where optionData.id is the same as the id of the result
@@ -78,7 +73,10 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 				(option) => option.id === optionData.id
 			);
 			if (shippingOption) {
-				return parseInt(shippingOption.rate, 10) * 100;
+				return {
+					calculated_amount: parseInt(shippingOption.rate, 10) * 100,
+					is_calculated_price_tax_inclusive: false,
+				};
 			}
 		} catch (e) {
 			this.logger_.error(
@@ -134,8 +132,7 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 	public async createFulfillment(
 		data: Record<string, unknown>,
 		items: Record<string, unknown>[],
-		order: Record<string, unknown> | undefined,
-		fulfillment: Record<string, unknown>
+		order: Record<string, unknown> | undefined
 	): Promise<{ data: PrintfulFullfillmentData }> {
 		this.logger_.info(`Create a fulfillment for order ${order.id}`);
 		const printfulOrder = await this.printfulService.confirmOrderById(

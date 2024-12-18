@@ -1,5 +1,5 @@
 import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework';
-import { ContainerRegistrationKeys, Modules } from '@medusajs/framework/utils';
+import { ContainerRegistrationKeys, Modules } from '@medusajs/utils';
 import { PrintfulModules } from '../utils';
 
 export default async function orderPlaced({

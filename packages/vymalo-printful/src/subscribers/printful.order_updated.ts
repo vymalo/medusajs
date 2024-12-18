@@ -1,6 +1,6 @@
 import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework';
 import type { EventType, WebhookWithData } from '../types';
-import { ContainerRegistrationKeys } from '@medusajs/framework/utils';
+import { ContainerRegistrationKeys } from '@medusajs/utils';
 
 type Data = Extract<
 	WebhookWithData,
@@ -10,11 +10,11 @@ type Data = Extract<
 >['data'];
 
 export default async function printfulOrder_updated({
-	event: {
-		data: { order },
-	},
-	container,
-}: SubscriberArgs<Data>) {
+																											event: {
+																												data: { order },
+																											},
+																											container,
+																										}: SubscriberArgs<Data>) {
 	const logger = container.resolve(ContainerRegistrationKeys.LOGGER);
 	const orderId = order.id;
 	logger.log(`Printful order ${orderId} was updated`);

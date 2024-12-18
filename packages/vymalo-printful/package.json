@@ -38,8 +38,10 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
+    "@medusajs/core-flows": "^2.1.2",
     "@medusajs/framework": "^2.1.2",
-    "@medusajs/medusa": "^2.1.2",
+    "@medusajs/types": "^2.1.2",
+    "@medusajs/utils": "^2.1.2",
     "axios": "^1.7.8",
     "lodash": "^4.17.21"
   },

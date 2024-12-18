@@ -1,6 +1,6 @@
 import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework';
-import { ContainerRegistrationKeys } from '@medusajs/framework/utils';
-import { OrderDTO } from '@medusajs/framework/types';
+import { ContainerRegistrationKeys } from '@medusajs/utils';
+import { OrderDTO } from '@medusajs/types';
 import { PrintfulModules } from '../utils';
 
 export default async function orderCanceled({

@@ -1,4 +1,4 @@
-import type { LoaderOptions, Logger } from '@medusajs/framework/types';
+import type { LoaderOptions, Logger } from '@medusajs/types';
 import { type WebhookType } from '../../../types';
 import { OpenAPI, WebhookApiService } from '../../../core';
 import { Options } from './types';

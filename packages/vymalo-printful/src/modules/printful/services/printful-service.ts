@@ -1,4 +1,4 @@
-import { Modules } from '@medusajs/framework/utils';
+import { Modules } from '@medusajs/utils';
 import type { IPrintfulService, PrintfulOptions } from '../../../types';
 import {
 	CalculateShippingRatesData,
@@ -10,30 +10,27 @@ import {
 	SyncProduct,
 	SyncVariant,
 } from '../../../core';
-import {
+import type {
+	CreateProductOptionDTO,
+	CreateProductVariantWorkflowInputDTO,
 	CreateProductWorkflowInputDTO,
 	IFulfillmentModuleService,
 	IProductModuleService,
 	Logger,
+	MedusaContainer,
 	OrderDTO,
 	ProductDTO,
-} from '@medusajs/framework/types';
-import { groupBy, kebabCase, map, merge, uniq } from 'lodash';
-import {
-	CreateProductOptionDTO,
-	UpdateProductDTO,
 	UpsertProductImageDTO,
-} from '@medusajs/types/dist/product/common';
+} from '@medusajs/types';
+import { groupBy, kebabCase, map, merge, uniq } from 'lodash';
 import { multiMap } from '../../../utils';
 import {
 	createProductsWorkflow,
-	deleteProductsWorkflow,
 	deleteProductOptionsWorkflow,
+	deleteProductsWorkflow,
 	deleteProductVariantsWorkflow,
 	updateProductsWorkflow,
-} from '@medusajs/medusa/core-flows';
-import { CreateProductVariantWorkflowInputDTO } from '@medusajs/types/dist/workflows/products/mutations';
-import { MedusaContainer } from '@medusajs/types';
+} from '@medusajs/core-flows';
 
 type InjectedDependencies = {
 	logger: Logger;
@@ -84,7 +81,7 @@ export default class PrintFulService implements IPrintfulService {
 		}
 	}
 
-	public async createOrder(order: OrderDTO, _: MedusaContainer) {
+	public async createOrder(order: OrderDTO) {
 		const {
 			data: { id: printfulShippingId },
 		} = await this.fulfillmentService.retrieveShippingOption(
