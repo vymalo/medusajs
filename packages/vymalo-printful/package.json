@@ -38,7 +38,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@medusajs/framework": "^2.1.1",
+    "@medusajs/framework": "^2.1.2",
     "@medusajs/medusa": "^2.1.1",
     "axios": "^1.7.8",
     "lodash": "^4.17.21"
