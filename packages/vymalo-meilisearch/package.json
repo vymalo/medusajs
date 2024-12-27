@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@medusajs/framework": "^2.1.3",
-    "@medusajs/types": "^2.1.2",
+    "@medusajs/types": "^2.1.3",
     "@medusajs/utils": "^2.1.3",
     "awilix": "^12.0.4"
   }
