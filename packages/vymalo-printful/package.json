@@ -38,7 +38,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "@medusajs/core-flows": "^2.1.2",
+    "@medusajs/core-flows": "^2.1.3",
     "@medusajs/framework": "^2.1.3",
     "@medusajs/types": "^2.1.3",
     "@medusajs/utils": "^2.1.3",
