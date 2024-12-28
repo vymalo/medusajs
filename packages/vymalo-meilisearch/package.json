@@ -33,7 +33,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "meilisearch": "^0.46.0"
+    "meilisearch": "^0.47.0"
   },
   "devDependencies": {
     "@medusajs/framework": "^2.1.3",
