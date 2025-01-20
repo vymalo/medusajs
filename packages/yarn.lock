@@ -1257,15 +1257,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/core-flows@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@medusajs/core-flows@npm:2.2.0"
+"@medusajs/core-flows@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/core-flows@npm:2.3.0"
   dependencies:
     json-2-csv: "npm:^5.5.4"
   peerDependencies:
     "@medusajs/framework": ^2.0.0
     awilix: ^8.0.1
-  checksum: 10c0/78881232066c9a5f478d3d0b3657403e425347ff08a568e0d9f0339a0f96203d90d4cf855a5d0324f7574932b4ae89e6eb9624f959ab3def2df41b26c5bf6a97
+  checksum: 10c0/7034838c4ce07e39cdbff9e5be4fcdee03ac86454608ca0add6d29a388b80d2daeed029e784828ccabcdd1e308269076933a9f0e3d3720f2c3297e7556e50c15
   languageName: node
   linkType: hard
 
@@ -2211,7 +2211,7 @@ __metadata:
   resolution: "@vymalo/medusa-printful@workspace:vymalo-printful"
   dependencies:
     "@hey-api/openapi-ts": "npm:^0.55.1"
-    "@medusajs/core-flows": "npm:^2.2.0"
+    "@medusajs/core-flows": "npm:^2.3.0"
     "@medusajs/framework": "npm:^2.2.0"
     "@medusajs/types": "npm:^2.2.0"
     "@medusajs/utils": "npm:^2.2.0"
