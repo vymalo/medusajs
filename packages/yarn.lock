@@ -1269,17 +1269,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/framework@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@medusajs/framework@npm:2.2.0"
+"@medusajs/framework@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/framework@npm:2.3.0"
   dependencies:
     "@jercle/yargonaut": "npm:^1.1.5"
-    "@medusajs/modules-sdk": "npm:^2.2.0"
-    "@medusajs/orchestration": "npm:^2.2.0"
-    "@medusajs/telemetry": "npm:^2.2.0"
-    "@medusajs/types": "npm:^2.2.0"
-    "@medusajs/utils": "npm:^2.2.0"
-    "@medusajs/workflows-sdk": "npm:^2.2.0"
+    "@medusajs/modules-sdk": "npm:^2.3.0"
+    "@medusajs/orchestration": "npm:^2.3.0"
+    "@medusajs/telemetry": "npm:^2.3.0"
+    "@medusajs/types": "npm:^2.3.0"
+    "@medusajs/utils": "npm:^2.3.0"
+    "@medusajs/workflows-sdk": "npm:^2.3.0"
     "@opentelemetry/api": "npm:^1.9.0"
     "@types/express": "npm:^4.17.17"
     connect-redis: "npm:5.2.0"
@@ -1311,17 +1311,17 @@ __metadata:
       optional: true
   bin:
     medusa-mikro-orm: dist/mikro-orm-cli/bin.js
-  checksum: 10c0/10505f3a5c058cbc066c358e666e25871be0f3c0fb4e948c6da861e80996e43c30ca1bbd1490bf78cdc6915abb0c003ca7dacea6a98cc52e963ba85b50037d04
+  checksum: 10c0/62de7871216824be450f74efdf602e59b88d17d89909ff9352b02d4ded4206b55ea14e0bdb342b79b77d483700ace7c671c9bd181ec56c479a0226df893fe1cf
   languageName: node
   linkType: hard
 
-"@medusajs/modules-sdk@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@medusajs/modules-sdk@npm:2.2.0"
+"@medusajs/modules-sdk@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/modules-sdk@npm:2.3.0"
   dependencies:
-    "@medusajs/orchestration": "npm:^2.2.0"
-    "@medusajs/types": "npm:^2.2.0"
-    "@medusajs/utils": "npm:^2.2.0"
+    "@medusajs/orchestration": "npm:^2.3.0"
+    "@medusajs/types": "npm:^2.3.0"
+    "@medusajs/utils": "npm:^2.3.0"
   peerDependencies:
     "@mikro-orm/core": 5.9.7
     "@mikro-orm/knex": 5.9.7
@@ -1330,16 +1330,16 @@ __metadata:
     awilix: ^8.0.1
     express: ^4.21.0
     pg: ^8.13.0
-  checksum: 10c0/9bc04d498b8b21eb2eee92c0c38b1710c9d63bfaff64c7ddb957742fe50fbdba7c5a467b3dbf11bc567cb7d59fec9f4f7bfcb8bd1ce1e6935c252f5042afe443
+  checksum: 10c0/148ff5d4d3c54dc01c47ab2647831b7829ccf01ba2969b46e1c5d0b2f50186f928e82c1a92185a429b3143e4c1ffbb960c61781cf7fd4ab44595a0e0285a38d0
   languageName: node
   linkType: hard
 
-"@medusajs/orchestration@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@medusajs/orchestration@npm:2.2.0"
+"@medusajs/orchestration@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/orchestration@npm:2.3.0"
   dependencies:
-    "@medusajs/types": "npm:^2.2.0"
-    "@medusajs/utils": "npm:^2.2.0"
+    "@medusajs/types": "npm:^2.3.0"
+    "@medusajs/utils": "npm:^2.3.0"
   peerDependencies:
     "@mikro-orm/core": 5.9.7
     "@mikro-orm/knex": 5.9.7
@@ -1348,13 +1348,13 @@ __metadata:
     awilix: ^8.0.1
     express: ^4.21.0
     pg: ^8.13.0
-  checksum: 10c0/2bad99817a3158feee599cd3a97ae25c43ed0d8e911f7728718830c1318e1c91963559a91aa2d868c1a2f696f6cb5cfe112658795e6978b3c3ebfb7beabcb5ef
+  checksum: 10c0/21526399c90ebed2c5ffc7e77349b2ece44b5565505540f9056fb46a720b95570c198b2975b020eb494c60a702d67e2b3d6d7869ea9af8d894020df6637d306d
   languageName: node
   linkType: hard
 
-"@medusajs/telemetry@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@medusajs/telemetry@npm:2.2.0"
+"@medusajs/telemetry@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/telemetry@npm:2.3.0"
   dependencies:
     "@babel/runtime": "npm:^7.22.10"
     axios: "npm:^0.21.4"
@@ -1366,7 +1366,7 @@ __metadata:
     is-docker: "npm:^2.2.1"
     remove-trailing-slash: "npm:^0.1.1"
     uuid: "npm:^8.3.2"
-  checksum: 10c0/c5b72270cd0786637881562c16e5ef0ae1c9b516e6c3da881d0838a465792dbdc601a64d0372a2c40d0da65e9bcd96628b9f7fa486ebb543de1c5cd4287977be
+  checksum: 10c0/f0b91c5a776f535ad7f191a4161e2d5a1c5e0b066351ef439d5aa9be11f7bfcb54d992393c89a45497cf89984bc03c01f6ae73098b6147c3e63959cb94afacb2
   languageName: node
   linkType: hard
 
@@ -1385,6 +1385,24 @@ __metadata:
     vite:
       optional: true
   checksum: 10c0/4865274e83d85404805c845d741df14f0d81bc7b869aa1ace90d079a3440ce2d4356b2da55781fa9dd154a604bd758d97a5d1b0b40c9c48eda25d5f0609165ac
+  languageName: node
+  linkType: hard
+
+"@medusajs/types@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/types@npm:2.3.0"
+  dependencies:
+    bignumber.js: "npm:^9.1.2"
+  peerDependencies:
+    awilix: ^8.0.1
+    ioredis: ^5.4.1
+    vite: ^5.2.11
+  peerDependenciesMeta:
+    ioredis:
+      optional: true
+    vite:
+      optional: true
+  checksum: 10c0/49190f39d25c15042a4ab81259a98edb02dd3b2ac7d425d4c7cd54f6029cc2890c2e3addd2276cff9b6a00f98381ee0f7bf3965183bfc348c0045637498f0964
   languageName: node
   linkType: hard
 
@@ -1418,14 +1436,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/workflows-sdk@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "@medusajs/workflows-sdk@npm:2.2.0"
+"@medusajs/utils@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/utils@npm:2.3.0"
   dependencies:
-    "@medusajs/modules-sdk": "npm:^2.2.0"
-    "@medusajs/orchestration": "npm:^2.2.0"
-    "@medusajs/types": "npm:^2.2.0"
-    "@medusajs/utils": "npm:^2.2.0"
+    "@graphql-codegen/core": "npm:^4.0.2"
+    "@graphql-codegen/typescript": "npm:^4.0.9"
+    "@graphql-tools/merge": "npm:^9.0.7"
+    "@graphql-tools/schema": "npm:^10.0.6"
+    "@medusajs/types": "npm:^2.3.0"
+    "@types/pluralize": "npm:^0.0.33"
+    bignumber.js: "npm:^9.1.2"
+    dotenv: "npm:^16.4.5"
+    dotenv-expand: "npm:^11.0.6"
+    graphql: "npm:^16.9.0"
+    jsonwebtoken: "npm:^9.0.2"
+    pg-connection-string: "npm:^2.7.0"
+    pluralize: "npm:^8.0.0"
     ulid: "npm:^2.3.0"
   peerDependencies:
     "@mikro-orm/core": 5.9.7
@@ -1435,7 +1462,28 @@ __metadata:
     awilix: ^8.0.1
     express: ^4.21.0
     pg: ^8.13.0
-  checksum: 10c0/24f35e8fae8a074c469919fb91a1559d096fd6164d7c3bc05394ca3d6e22f25d993c4706ee1bff3972c6a7e34273aed1dc346324412f1fa9244449536e39faef
+  checksum: 10c0/51186b4ceec01d787e96052ddded3f3833e4f1e95c963e4939653c431f54714eb02b294b0516f5adc0f1e683ae2a11083a92f250033d99244559778a5bdb73fb
+  languageName: node
+  linkType: hard
+
+"@medusajs/workflows-sdk@npm:^2.3.0":
+  version: 2.3.0
+  resolution: "@medusajs/workflows-sdk@npm:2.3.0"
+  dependencies:
+    "@medusajs/modules-sdk": "npm:^2.3.0"
+    "@medusajs/orchestration": "npm:^2.3.0"
+    "@medusajs/types": "npm:^2.3.0"
+    "@medusajs/utils": "npm:^2.3.0"
+    ulid: "npm:^2.3.0"
+  peerDependencies:
+    "@mikro-orm/core": 5.9.7
+    "@mikro-orm/knex": 5.9.7
+    "@mikro-orm/migrations": 5.9.7
+    "@mikro-orm/postgresql": 5.9.7
+    awilix: ^8.0.1
+    express: ^4.21.0
+    pg: ^8.13.0
+  checksum: 10c0/31aa5847093692b730b7bb11abf9845f880a68d4f6ba5d8d666cd90a93df199e2abfe8e798b76f90fa781b2a4678c102d1adda983cda9c9b78afe223e24ab086
   languageName: node
   linkType: hard
 
@@ -2163,7 +2211,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vymalo/medusa-keycloak@workspace:vymalo-keycloak"
   dependencies:
-    "@medusajs/framework": "npm:^2.2.0"
+    "@medusajs/framework": "npm:^2.3.0"
     "@types/jsonwebtoken": "npm:^9.0.7"
     "@types/simple-oauth2": "npm:^5.0.7"
     jsonwebtoken: "npm:^9.0.2"
@@ -2175,7 +2223,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vymalo/medusa-mail@workspace:vymalo-mail"
   dependencies:
-    "@medusajs/framework": "npm:^2.2.0"
+    "@medusajs/framework": "npm:^2.3.0"
     "@types/email-templates": "npm:^10.0.4"
     "@types/preview-email": "npm:^3.1.0"
     email-templates: "npm:^12.0.1"
@@ -2187,7 +2235,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vymalo/medusa-meilisearch@workspace:vymalo-meilisearch"
   dependencies:
-    "@medusajs/framework": "npm:^2.2.0"
+    "@medusajs/framework": "npm:^2.3.0"
     "@medusajs/types": "npm:^2.2.0"
     "@medusajs/utils": "npm:^2.2.0"
     awilix: "npm:^12.0.4"
@@ -2199,7 +2247,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@vymalo/medusa-minio@workspace:vymalo-minio"
   dependencies:
-    "@medusajs/framework": "npm:^2.2.0"
+    "@medusajs/framework": "npm:^2.3.0"
     "@types/fs-extra": "npm:^11"
     fs-extra: "npm:^11.2.0"
     minio: "npm:^8.0.3"
@@ -2212,7 +2260,7 @@ __metadata:
   dependencies:
     "@hey-api/openapi-ts": "npm:^0.55.1"
     "@medusajs/core-flows": "npm:^2.2.0"
-    "@medusajs/framework": "npm:^2.2.0"
+    "@medusajs/framework": "npm:^2.3.0"
     "@medusajs/types": "npm:^2.2.0"
     "@medusajs/utils": "npm:^2.2.0"
     "@types/lodash": "npm:^4.17.13"
