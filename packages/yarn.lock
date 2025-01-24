@@ -2209,7 +2209,7 @@ __metadata:
     "@medusajs/types": "npm:^2.3.1"
     "@medusajs/utils": "npm:^2.2.0"
     awilix: "npm:^12.0.4"
-    meilisearch: "npm:^0.48.0"
+    meilisearch: "npm:^0.48.2"
   languageName: unknown
   linkType: soft
 
@@ -6632,10 +6632,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"meilisearch@npm:^0.48.0":
-  version: 0.48.0
-  resolution: "meilisearch@npm:0.48.0"
-  checksum: 10c0/236a6b1e7df68fc7c656d229042d0da2258da789d7ec4530939f9e356547ab8e833fc67dac8cceb004c332f6b6f670797e3011e5c249355211381ba23032d4f1
+"meilisearch@npm:^0.48.2":
+  version: 0.48.2
+  resolution: "meilisearch@npm:0.48.2"
+  checksum: 10c0/b30d48829980549b6cc509286c57d9b7a8527af12a3e234f93f0bd26bd5967b863df6fa95b2c4b00ec7cb3535ae9ba1dbf136fdda13d47db615d48e71444ce14
   languageName: node
   linkType: hard
 
