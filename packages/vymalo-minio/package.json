@@ -25,7 +25,7 @@
   "description": "",
   "dependencies": {
     "fs-extra": "^11.3.0",
-    "minio": "^8.0.3"
+    "minio": "^8.0.4"
   },
   "devDependencies": {
     "@medusajs/framework": "^2.3.1",
