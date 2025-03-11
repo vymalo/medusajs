@@ -2280,7 +2280,7 @@ __metadata:
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^8.10.0"
     "@typescript-eslint/parser": "npm:^8.10.0"
-    daisyui: "npm:^4.12.23"
+    daisyui: "npm:^5.0.0"
     eslint: "npm:8"
     eslint-config-next: "npm:^14.2.15"
     eslint-config-prettier: "npm:^9.1.0"
@@ -2299,7 +2299,7 @@ __metadata:
     "@tailwindcss/forms": "npm:^0.5.10"
     "@tailwindcss/typography": "npm:^0.5.16"
     colord: "npm:^2.9.3"
-    daisyui: "npm:^4.12.23"
+    daisyui: "npm:^5.0.0"
     tailwind-extended-shadows: "npm:^0.4.1"
     tailwindcss: "npm:*"
     tailwindcss-radix: "npm:^3.0.5"
@@ -3564,16 +3564,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-selector-tokenizer@npm:^0.8":
-  version: 0.8.0
-  resolution: "css-selector-tokenizer@npm:0.8.0"
-  dependencies:
-    cssesc: "npm:^3.0.0"
-    fastparse: "npm:^1.1.2"
-  checksum: 10c0/86f68cc666d41f9d153351677694002a9d00e2609e6abc66fcfd7f580be3d6ecc0929e46a06c621ab28da5febbb54567db9709b819414edae4a36d9ff9133e16
-  languageName: node
-  linkType: hard
-
 "css-what@npm:^6.0.1, css-what@npm:^6.1.0":
   version: 6.1.0
   resolution: "css-what@npm:6.1.0"
@@ -3597,22 +3587,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"culori@npm:^3":
-  version: 3.3.0
-  resolution: "culori@npm:3.3.0"
-  checksum: 10c0/acd330a8f940dc22f36650ba722c9302a4745fee3c8fb40a27ac27228767e2cba4221c2dc414fce652b82cb264d28f65d8b76d505df402ecf94dbb9e440319e1
-  languageName: node
-  linkType: hard
-
-"daisyui@npm:^4.12.23":
-  version: 4.12.23
-  resolution: "daisyui@npm:4.12.23"
-  dependencies:
-    css-selector-tokenizer: "npm:^0.8"
-    culori: "npm:^3"
-    picocolors: "npm:^1"
-    postcss-js: "npm:^4"
-  checksum: 10c0/7699d294c6193800fc1a0671d67f1a5ea46059cd36702a4326a82c6b0bb823de8ba485aca20beac970ee2a47949c5411df8ea60a40c3e00989d7ce2214e6c196
+"daisyui@npm:^5.0.0":
+  version: 5.0.0
+  resolution: "daisyui@npm:5.0.0"
+  checksum: 10c0/54251dbb768a92b6f476514f0ff728dd58fe854cb4ab5bab7f30e6e76dd3d8d8632fe5ffdb9c22aa31d71329188b9648e475090c3d61801f8eab365dc3a831b7
   languageName: node
   linkType: hard
 
@@ -4797,13 +4775,6 @@ __metadata:
   bin:
     fxparser: src/cli/cli.js
   checksum: 10c0/71d206c9e137f5c26af88d27dde0108068a5d074401901d643c500c36e95dfd828333a98bda020846c41f5b9b364e2b0e9be5b19b0bdcab5cf31559c07b80a95
-  languageName: node
-  linkType: hard
-
-"fastparse@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "fastparse@npm:1.1.2"
-  checksum: 10c0/c08d6e7ef10c0928426c1963dd4593e2baaf44d223ab1e5ba5d7b30470144b3a4ecb3605958b73754cea3f857ecef00b67c885f07ca2c312b38b67d9d88b84b5
   languageName: node
   linkType: hard
 
@@ -7724,7 +7695,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"picocolors@npm:^1, picocolors@npm:^1.0.0, picocolors@npm:^1.1.0, picocolors@npm:^1.1.1":
+"picocolors@npm:^1.0.0, picocolors@npm:^1.1.0, picocolors@npm:^1.1.1":
   version: 1.1.1
   resolution: "picocolors@npm:1.1.1"
   checksum: 10c0/e2e3e8170ab9d7c7421969adaa7e1b31434f789afb9b3f115f6b96d91945041ac3ceb02e9ec6fe6510ff036bcc0bf91e69a1772edc0b707e12b19c0f2d6bcf58
@@ -7797,7 +7768,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-js@npm:^4, postcss-js@npm:^4.0.1":
+"postcss-js@npm:^4.0.1":
   version: 4.0.1
   resolution: "postcss-js@npm:4.0.1"
   dependencies:
