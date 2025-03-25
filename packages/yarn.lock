@@ -2253,7 +2253,7 @@ __metadata:
     "@medusajs/framework": "npm:^2.3.1"
     "@types/fs-extra": "npm:^11"
     fs-extra: "npm:^11.3.0"
-    minio: "npm:^8.0.3"
+    minio: "npm:^8.0.5"
   languageName: unknown
   linkType: soft
 
@@ -6848,9 +6848,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minio@npm:^8.0.3":
-  version: 8.0.3
-  resolution: "minio@npm:8.0.3"
+"minio@npm:^8.0.5":
+  version: 8.0.5
+  resolution: "minio@npm:8.0.5"
   dependencies:
     async: "npm:^3.2.4"
     block-stream2: "npm:^2.1.0"
@@ -6866,7 +6866,7 @@ __metadata:
     through2: "npm:^4.0.2"
     web-encoding: "npm:^1.1.5"
     xml2js: "npm:^0.5.0 || ^0.6.2"
-  checksum: 10c0/2af72a70f9778c6257e7d1146f021a471f42d429a6bbe790a3035ef0a8be82daa4f84b0a3d5ad6f716a761b34a460e3787a28c1672332c0aef391acad84ab40b
+  checksum: 10c0/e9f024c6514df1e0e54e522df5f92bdb985d036f8c3ef240e338a6a5f700681a0e5bae032933d8fbe5db5b3307912f487a88c54f927a381a54143e3e7271b4d3
   languageName: node
   linkType: hard
 
