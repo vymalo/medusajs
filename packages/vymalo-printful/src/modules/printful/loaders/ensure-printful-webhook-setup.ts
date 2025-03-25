@@ -1,28 +1,23 @@
 import type { LoaderOptions, Logger } from '@medusajs/types';
 import { type WebhookType } from '../../../types';
-import { OpenAPI, WebhookApiService } from '../../../core';
+import { WebhookApiService } from '../../../core';
 import { Options } from './types';
+import { client } from '../../../core/generated/printful/client.gen';
 
 export default async function ensurePrintfulWebhookSetup({
 	logger,
 	options,
 }: LoaderOptions<Options>): Promise<void> {
-	OpenAPI.interceptors.request.use(async (config) => {
+	client.instance.interceptors.request.use(async (config) => {
 		if (options.printfulAccessToken) {
-			config.headers = {
-				...config.headers,
-				Authorization: `Bearer ${options.printfulAccessToken}`,
-			};
+			config.headers.setAuthorization(`Bearer ${options.printfulAccessToken}`);
 		}
 
 		if (options.storeId) {
-			config.headers = {
-				...config.headers,
-				'X-PF-Store-Id': options.storeId,
-			};
+			config.headers.set('X-PF-Store-Id', options.storeId);
 		}
 
-		logger.info(`PRINTFUL -> ${config.method} -> ${config.url}`);
+		logger.debug(`PRINTFUL -> ${config.method} -> ${config.url}`);
 		return config;
 	});
 
@@ -53,7 +48,9 @@ async function ensureWebhookExists({ backendUrl }: Options, logger: Logger) {
 		'order_remove_hold',
 	];
 
-	const { result } = await WebhookApiService.getWebhooks();
+	const {
+		data: { result },
+	} = await WebhookApiService.getWebhooks();
 
 	if (
 		result.url === `${backendUrl}/printful/webhook` &&
@@ -63,8 +60,10 @@ async function ensureWebhookExists({ backendUrl }: Options, logger: Logger) {
 		return;
 	}
 
-	const { result: newWebhook } = await WebhookApiService.createWebhook({
-		requestBody: {
+	const {
+		data: { result: newWebhook },
+	} = await WebhookApiService.createWebhook({
+		body: {
 			url: `${backendUrl}/printful/webhook`,
 			types,
 		},

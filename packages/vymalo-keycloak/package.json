@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-keycloak",
-  "version": "1.0.6",
+  "version": "1.0.7-rc.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -32,8 +32,8 @@
     "simple-oauth2": "^5.1.0"
   },
   "devDependencies": {
-    "@medusajs/framework": "^2.3.1",
-    "@types/jsonwebtoken": "^9.0.7",
+    "@medusajs/framework": "^2.6.1",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/simple-oauth2": "^5.0.7"
   }
 }

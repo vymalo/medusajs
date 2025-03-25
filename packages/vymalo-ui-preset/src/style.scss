@@ -1,0 +1,77 @@
+@use 'sass:color';
+@use 'sass-material-colors/sass/sass-material-colors' as colors;
+
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-radix";
+
+@plugin "daisyui" {
+  themes: vymalo-dark --default,
+  vymalo-light --prefersdark;
+}
+
+$mainColor: 'purle';
+
+@plugin "daisyui/theme" {
+  name: 'vymalo-dark';  /* Good name, right?  */
+  --color-primary: #{colors.material-color($mainColor)};
+  --color-secondary: #{colors.material-color('teal', 400)};
+  --color-accent: #{colors.material-color('green', 500)};
+  --color-neutral: #{colors.material-color('grey', 900)};
+  --color-base-100: #{color.adjust(colors.material-color($mainColor, 900), $lightness: -20%, $saturation: -45%)};
+  --color-base-200: #{color.adjust(colors.material-color($mainColor, 900), $lightness: -21.5%, $saturation: -47%)};
+  --color-base-300: #{color.adjust(colors.material-color($mainColor, 900), $lightness: -23%, $saturation: -50%)};
+  --color-base-content: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 5%)};
+  --color-info: #{colors.material-color('blue', 700)};
+  --color-success: #{colors.material-color('green', 600)};
+  --color-warning: #{colors.material-color('orange', 800)};
+  --color-error: #{colors.material-color('red', 800)};
+}
+
+@plugin "daisyui/theme" {
+  name: 'vymalo-light';
+  --color-primary: #{colors.material-color($mainColor, 400)};
+  --color-secondary: #{colors.material-color('teal', 700)};
+  --color-accent: #{colors.material-color('green', 400)};
+  --color-neutral: #{colors.material-color('grey', 50)};
+  --color-base-100: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 4%, $saturation: -3%)};
+  --color-base-200: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 2%, $saturation: -4%)};
+  --color-base-300: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 1%, $saturation: -5%)};
+  --color-info: #{colors.material-color('blue', 400)};
+  --color-success: #{colors.material-color('green', 500)};
+  --color-warning: #{colors.material-color('orange', 600)};
+  --color-error: #{colors.material-color('red', 500)};
+}
+
+.btn {
+  svg {
+    @apply size-[1.4em];
+  }
+}
+
+.big-title {
+  &:first-child {
+    @apply text-4xl font-extrabold md:text-5xl lg:text-5xl xl:text-7xl;
+
+    span {
+      @apply bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent;
+    }
+  }
+}
+
+article {
+  h1,
+  h2 {
+    &:first-child {
+      @apply text-4xl font-extrabold md:text-5xl lg:text-5xl xl:text-7xl;
+      @apply bg-gradient-to-r from-blue-500 to-violet-500 bg-clip-text text-transparent;
+    }
+  }
+}
+
+.app-title {
+  @apply text-3xl font-bold md:text-4xl;
+}
+
+main {
+  @apply grid h-screen grid-rows-[auto_1fr_auto];
+}

@@ -1,8 +1,4 @@
-import type { SearchTypes } from '@medusajs/types';
 import type { AbstractSearchService } from '@medusajs/utils';
-import type { Config, Filter } from 'meilisearch';
-
-export type Options = MeilisearchAddOnOptions;
 
 export enum MeilisearchModules {
 	meilisearch = 'meilisearch',
@@ -17,22 +13,3 @@ declare module '@medusajs/types' {
 		[MeilisearchModules.meilisearch]: IMeilisearchService;
 	}
 }
-
-interface MeilisearchAddOnOptions {
-	/**
-	 * Meilisearch client configuration
-	 */
-	config: Config;
-	/**
-	 * Index settings
-	 */
-	settings?: {
-		[key: string]: SearchTypes.IndexSettings;
-	};
-}
-
-export type SearchOption = {
-	filter?: Filter;
-	paginationOptions: Record<'offset' | 'limit', number>;
-	additionalOptions: Record<string, unknown>;
-};

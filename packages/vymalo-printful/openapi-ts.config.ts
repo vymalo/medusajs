@@ -1,26 +1,27 @@
 import { defineConfig } from '@hey-api/openapi-ts';
+import { defaultPlugins } from '@hey-api/openapi-ts';
 
 export default defineConfig({
-	client: {
-		bundle: true,
-		name: 'legacy/axios',
-	},
 	input: 'openapi.json',
 	output: {
 		lint: 'eslint',
 		format: 'prettier',
 		path: 'src/core/generated/printful',
 	},
-	debug: true,
 	plugins: [
+		...defaultPlugins,
 		{
-			name: '@hey-api/types',
-			enums: 'typescript',
-			style: 'PascalCase',
+			name: '@hey-api/client-axios',
+			throwOnError: true,
 		},
 		{
-			name: '@hey-api/services',
+			dates: true,
+			name: '@hey-api/transformers',
+		},
+		{
+			name: '@hey-api/sdk',
 			asClass: true,
+			transformer: true,
 		},
 	],
 });

@@ -64,12 +64,12 @@ export default class PrintFulService implements IPrintfulService {
 		return this.options.confirmOrder;
 	}
 
-	public async getShippingRates(
-		data: CalculateShippingRatesData['requestBody']
-	) {
+	public async getShippingRates(data: CalculateShippingRatesData['body']) {
 		try {
-			const { result } = await ShippingRateApiService.calculateShippingRates({
-				requestBody: data,
+			const {
+				data: { result },
+			} = await ShippingRateApiService.calculateShippingRates({
+				body: data,
 			});
 			return result;
 		} catch (e) {
@@ -128,10 +128,14 @@ export default class PrintFulService implements IPrintfulService {
 			),
 		};
 
-		const { result } = await OrdersApiService.createOrder({
-			confirm: false,
-			updateExisting: true,
-			requestBody: orderObj,
+		const {
+			data: { result },
+		} = await OrdersApiService.createOrder({
+			query: {
+				confirm: false,
+				update_existing: true,
+			},
+			body: orderObj,
 		});
 
 		this.logger_.info(`Order created with Printful: ${result.id}`);
@@ -141,23 +145,35 @@ export default class PrintFulService implements IPrintfulService {
 	public async confirmOrderById(orderId: string | number) {
 		if (!this.confirmOrder) {
 			this.logger_.info('Order confirmation is disabled');
-			const { result } = await OrdersApiService.getOrderById({
-				id: orderId,
+			const {
+				data: { result },
+			} = await OrdersApiService.getOrderById({
+				path: {
+					id: orderId,
+				},
 			});
 			return result;
 		}
 
 		this.logger_.info(`Confirming order with Printful: ${orderId}`);
-		const { result } = await OrdersApiService.confirmOrderById({
-			id: orderId,
+		const {
+			data: { result },
+		} = await OrdersApiService.confirmOrderById({
+			path: {
+				id: orderId,
+			},
 		});
 
 		return result;
 	}
 
 	async cancelOrder(orderId: string | number) {
-		const { result } = await OrdersApiService.cancelOrderById({
-			id: orderId,
+		const {
+			data: { result },
+		} = await OrdersApiService.cancelOrderById({
+			path: {
+				id: orderId,
+			},
 		});
 
 		return result;
@@ -179,8 +195,12 @@ export default class PrintFulService implements IPrintfulService {
 	}
 
 	public async getSyncProduct(id: number) {
-		const { result } = await ProductsApiService.getSyncProductById({
-			id,
+		const {
+			data: { result },
+		} = await ProductsApiService.getSyncProductById({
+			path: {
+				id,
+			},
 		});
 		return result;
 	}
@@ -209,8 +229,12 @@ export default class PrintFulService implements IPrintfulService {
 	}
 
 	public async syncProducts(container: MedusaContainer): Promise<void> {
-		const { result } = await ProductsApiService.getSyncProducts({
-			status: 'synced',
+		const {
+			data: { result },
+		} = await ProductsApiService.getSyncProducts({
+			query: {
+				status: 'synced',
+			},
 		});
 
 		await Promise.all(

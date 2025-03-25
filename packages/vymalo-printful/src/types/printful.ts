@@ -8,7 +8,7 @@ export interface IPrintfulService {
 	confirmOrderById(orderId: string | number): Promise<Order>;
 
 	getShippingRates(
-		data: CalculateShippingRatesData['requestBody'],
+		data: CalculateShippingRatesData['body'],
 	): Promise<ShippingInfo[]>;
 
 	cancelOrder(

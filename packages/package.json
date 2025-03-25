@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/packages",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -27,5 +27,5 @@
     "prettier": "^3.3.3",
     "typescript": "^5.6.3"
   },
-  "packageManager": "yarn@4.5.3"
+  "packageManager": "yarn@4.6.0"
 }

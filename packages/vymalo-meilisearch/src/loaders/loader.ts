@@ -1,6 +1,5 @@
 import type { LoaderOptions } from '@medusajs/types';
-import { Options } from '../types';
-import MeiliSearch from 'meilisearch';
+import type { Options } from 'app-options';
 import { isString } from '@medusajs/utils';
 import { asValue } from 'awilix';
 
@@ -18,7 +17,8 @@ export default async function meilisearchLoader({
 	}
 
 	logger.info('Setting up meilisearch service');
-	const client = new MeiliSearch(options.config);
+	const { Meilisearch } = await import('meilisearch');
+	const client = new Meilisearch(options.config);
 
 	container.register({
 		client: asValue(client),

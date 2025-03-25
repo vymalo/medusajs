@@ -1,14 +1,17 @@
 import { AbstractFulfillmentProviderService } from '@medusajs/utils';
-import type {
+import {
+	CalculatedShippingOptionPrice,
+	CalculateShippingOptionPriceDTO,
+	CreateFulfillmentResult,
+	CreateShippingOptionDTO,
+	FulfillmentDTO,
+	FulfillmentItemDTO,
 	FulfillmentOption,
+	FulfillmentOrderDTO,
 	IProductModuleService,
 	Logger,
 } from '@medusajs/types';
 import type { ItemInfo, Order } from '../../../core';
-import type {
-	CalculatedShippingOptionPrice,
-	CalculateShippingOptionPriceDTO,
-} from '@medusajs/types';
 import { PrintfulModules } from '../../../utils';
 import type { IPrintfulService } from '../../../types';
 
@@ -37,9 +40,11 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 		this.logger_.info('Printful fulfillment provider initialized');
 	}
 
-	public async canCalculate(data: Record<string, unknown>): Promise<boolean> {
+	public async canCalculate({
+		data,
+	}: CreateShippingOptionDTO): Promise<boolean> {
 		this.logger_.info('canCalculate');
-		console.log(data);
+		console.debug(data);
 		return data.id === 'STANDARD' || data.id === 'PRINTFUL_FAST';
 	}
 
@@ -131,9 +136,12 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 
 	public async createFulfillment(
 		data: Record<string, unknown>,
-		items: Record<string, unknown>[],
-		order: Record<string, unknown> | undefined
-	): Promise<{ data: PrintfulFullfillmentData }> {
+		items: Partial<Omit<FulfillmentItemDTO, 'fulfillment'>>[],
+		order: Partial<FulfillmentOrderDTO> | undefined,
+		_fulfillment: Partial<
+			Omit<FulfillmentDTO, 'provider_id' | 'data' | 'items'>
+		>
+	): Promise<CreateFulfillmentResult> {
 		this.logger_.info(`Create a fulfillment for order ${order.id}`);
 		const printfulOrder = await this.printfulService.confirmOrderById(
 			`@${order.id}`
@@ -143,6 +151,11 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 				...data,
 				printfulOrder,
 			},
+			labels: printfulOrder.shipments.map((d) => ({
+				tracking_url: d.tracking_url,
+				tracking_number: d.tracking_number,
+				label_url: d.carrier,
+			})),
 		};
 	}
 
