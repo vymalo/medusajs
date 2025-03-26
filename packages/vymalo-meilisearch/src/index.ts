@@ -8,6 +8,5 @@ export default Module(MeilisearchModules.meilisearch, {
 	loaders: [meilisearchLoader],
 });
 
-export * from 'app-options';
 export * from './types';
 export * from './utils';

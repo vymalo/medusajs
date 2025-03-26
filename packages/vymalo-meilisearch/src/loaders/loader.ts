@@ -1,5 +1,5 @@
 import type { LoaderOptions } from '@medusajs/types';
-import type { Options } from 'app-options';
+import type { Options } from '../types';
 import { isString } from '@medusajs/utils';
 import { asValue } from 'awilix';
 

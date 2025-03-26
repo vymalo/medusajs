@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-meilisearch",
-  "version": "1.0.14-rc.0",
+  "version": "1.0.14-rc.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -15,7 +15,7 @@
     "./jobs/*": "./dist/jobs/*.js"
   },
   "scripts": {
-    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build && cp src/global.d.ts dist"
+    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
   },
   "keywords": [
     "medusa",
@@ -33,7 +33,7 @@
   "license": "MIT",
   "description": "",
   "dependencies": {
-    "meilisearch": "^0.49.0"
+    "meilisearch": "latest"
   },
   "devDependencies": {
     "@medusajs/framework": "^2.6.1",

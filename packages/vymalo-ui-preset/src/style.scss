@@ -5,8 +5,8 @@
 @plugin "tailwindcss-radix";
 
 @plugin "daisyui" {
-  themes: vymalo-dark --default,
-  vymalo-light --prefersdark;
+  themes: vymalo-light --default,
+  vymalo-dark --prefersdark;
 }
 
 $mainColor: 'purle';

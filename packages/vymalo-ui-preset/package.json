@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/ui-preset",
-  "version": "1.0.8-rc.0",
+  "version": "1.0.8-rc.1",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
@@ -36,5 +36,8 @@
     "sass-material-colors": "^0.0.5",
     "tailwindcss": "^4",
     "tailwindcss-radix": "^4"
-  }
+  },
+  "files": [
+    "dist"
+  ]
 }

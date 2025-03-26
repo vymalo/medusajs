@@ -3,6 +3,12 @@ name: Npm Publish
 on:
   release:
     types: [published]
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
 
 jobs:
   build:
@@ -29,6 +35,7 @@ jobs:
 
       - run: npm publish --access public -ws
         name: Publish packages
+        if: github.event_name == 'release' && github.event.action == 'published'
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 

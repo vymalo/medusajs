@@ -1,5 +1,6 @@
 import type { Logger, ProductDTO, SearchTypes } from '@medusajs/types';
 import { AbstractSearchService, SearchUtils } from '@medusajs/utils';
+import type { Options, SearchOption } from '../types';
 import { IMeilisearchService } from '../types';
 import type {
 	EnqueuedTask,
@@ -8,9 +9,8 @@ import type {
 	MeiliSearch,
 	SearchParams,
 	SearchResponse,
-} from 'meilisearch-options';
+} from 'meilisearch' with { 'resolution-mode': 'import' };
 import { transformProduct } from '../utils';
-import type { Options, SearchOption } from 'app-options';
 
 type InjectedDependencies = {
 	logger: Logger;
