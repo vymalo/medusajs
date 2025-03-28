@@ -57,10 +57,7 @@ export default class KeycloakService extends AbstractAuthModuleProvider {
 		}
 	}
 
-	async register(
-		data: AuthenticationInput,
-		authIdentityProviderService: AuthIdentityProviderService
-	): Promise<AuthenticationResponse> {
+	async register(): Promise<AuthenticationResponse> {
 		throw new MedusaError(
 			MedusaError.Types.NOT_ALLOWED,
 			'Keycloak does not support direct registration. Use method `authenticate` instead.'

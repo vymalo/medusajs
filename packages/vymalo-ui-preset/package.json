@@ -1,13 +1,16 @@
 {
   "name": "@vymalo/ui-preset",
-  "version": "1.0.8-rc.1",
+  "version": "1.0.8-rc.2",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
     "directory": "packages/vymalo-ui-preset"
   },
   "scripts": {
-    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && mkdir -p dist && cp src/style.scss dist"
+    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && mkdir -p dist && cp src/*.scss dist"
+  },
+  "exports": {
+    "./*": "./dist/*"
   },
   "keywords": [
     "medusa",
@@ -33,7 +36,6 @@
     "@tailwindcss/typography": "^0.5.16",
     "colord": "^2.9.3",
     "daisyui": "^5.0.9",
-    "sass-material-colors": "^0.0.5",
     "tailwindcss": "^4",
     "tailwindcss-radix": "^4"
   },

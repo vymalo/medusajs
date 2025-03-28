@@ -14,7 +14,7 @@ import { transformProduct } from '../utils';
 
 type InjectedDependencies = {
 	logger: Logger;
-	client: MeiliSearch;
+	meilisearch_client: MeiliSearch;
 };
 
 export default class MeiliSearchService<
@@ -36,7 +36,7 @@ export default class MeiliSearchService<
 		super(deps, options);
 
 		this.logger = deps.logger;
-		this.client = deps.client;
+		this.client = deps.meilisearch_client;
 		this.settings = options.settings;
 	}
 

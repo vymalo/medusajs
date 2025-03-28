@@ -21,7 +21,7 @@ export default async function meilisearchLoader({
 	const client = new Meilisearch(options.config);
 
 	container.register({
-		client: asValue(client),
+		meilisearch_client: asValue(client),
 	});
 	logger.info('Meilisearch service set up');
 }

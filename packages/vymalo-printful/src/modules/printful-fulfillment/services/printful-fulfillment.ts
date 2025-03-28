@@ -32,7 +32,8 @@ export default class PrintfulFulfillment extends AbstractFulfillmentProviderServ
 	private readonly productModuleService: IProductModuleService;
 
 	constructor({ logger, printful }: InjectedDependencies) {
-		super();
+		// @ts-ignore
+		super(...arguments);
 
 		this.logger_ = logger;
 		this.printfulService = printful;

@@ -12,7 +12,7 @@ import type Email from 'email-templates';
 
 type InjectedDependencies = {
 	logger: Logger;
-	email: Email;
+	email_client: Email;
 };
 
 export default class MailService extends AbstractNotificationProviderService {
@@ -22,13 +22,13 @@ export default class MailService extends AbstractNotificationProviderService {
 	protected readonly options: Options;
 	protected readonly email: Email;
 
-	constructor({ logger, email }: InjectedDependencies, options: Options) {
+	constructor({ logger, email_client }: InjectedDependencies, options: Options) {
 		// @ts-ignore
 		super(...arguments);
 
 		this.logger = logger;
 		this.options = options;
-		this.email = email;
+		this.email = email_client;
 	}
 
 	static validateOptions(options: Options) {

@@ -1,6 +1,7 @@
 import type { LoaderOptions } from '@medusajs/framework/types';
 import Email from 'email-templates';
-import { Options } from './types';
+import type { Options } from './types';
+import { asValue } from 'awilix';
 
 export default async function mailLoader({
 	logger,
@@ -10,6 +11,8 @@ export default async function mailLoader({
 	logger.info('Setting up email service');
 	const email = new Email(options);
 
-	container.registerAdd('email', email);
+	container.register({
+		email_client: asValue(email),
+	});
 	logger.info('Email service set up');
 }

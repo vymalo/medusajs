@@ -1,50 +1,68 @@
-@use 'sass:color';
-@use 'sass-material-colors/sass/sass-material-colors' as colors;
+@use 'variables' as vars;
+
+@import url("https://s3.ssegning.me/home/fonts/louis-george-cafe/99travl-font.css");
 
 @plugin "@tailwindcss/typography";
 @plugin "tailwindcss-radix";
 
 @plugin "daisyui" {
-  themes: vymalo-light --default,
-  vymalo-dark --prefersdark;
-}
+  themes: light --default,
+  dark --prefersdark;
 
-$mainColor: 'purle';
-
-@plugin "daisyui/theme" {
-  name: 'vymalo-dark';  /* Good name, right?  */
-  --color-primary: #{colors.material-color($mainColor)};
-  --color-secondary: #{colors.material-color('teal', 400)};
-  --color-accent: #{colors.material-color('green', 500)};
-  --color-neutral: #{colors.material-color('grey', 900)};
-  --color-base-100: #{color.adjust(colors.material-color($mainColor, 900), $lightness: -20%, $saturation: -45%)};
-  --color-base-200: #{color.adjust(colors.material-color($mainColor, 900), $lightness: -21.5%, $saturation: -47%)};
-  --color-base-300: #{color.adjust(colors.material-color($mainColor, 900), $lightness: -23%, $saturation: -50%)};
-  --color-base-content: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 5%)};
-  --color-info: #{colors.material-color('blue', 700)};
-  --color-success: #{colors.material-color('green', 600)};
-  --color-warning: #{colors.material-color('orange', 800)};
-  --color-error: #{colors.material-color('red', 800)};
+  logs: false;
 }
 
 @plugin "daisyui/theme" {
-  name: 'vymalo-light';
-  --color-primary: #{colors.material-color($mainColor, 400)};
-  --color-secondary: #{colors.material-color('teal', 700)};
-  --color-accent: #{colors.material-color('green', 400)};
-  --color-neutral: #{colors.material-color('grey', 50)};
-  --color-base-100: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 4%, $saturation: -3%)};
-  --color-base-200: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 2%, $saturation: -4%)};
-  --color-base-300: #{color.adjust(colors.material-color($mainColor, 50), $lightness: 1%, $saturation: -5%)};
-  --color-info: #{colors.material-color('blue', 400)};
-  --color-success: #{colors.material-color('green', 500)};
-  --color-warning: #{colors.material-color('orange', 600)};
-  --color-error: #{colors.material-color('red', 500)};
+  name: "dark";                              // Dark Theme
+  --color-primary: #{vars.$purple-500};             // Purple (default intensity: 500)
+  --color-secondary: #{vars.$teal-400};             // Teal 400
+  --color-accent: #{vars.$green-500};               // Green 500
+  --color-neutral: #{vars.$grey-900};               // Grey 900 
+  --color-base-100: #{vars.$dark-base-100};         // Adjusted base from purple-900
+  --color-base-200: #{vars.$dark-base-200};
+  --color-base-300: #{vars.$dark-base-300};
+  --color-base-content: #{vars.$dark-base-content}; // Adjusted from purple-50 
+  --color-info: #{vars.$blue-700};                  // Blue 700
+  --color-success: #{vars.$green-600};              // Green 600
+  --color-warning: #{vars.$orange-800};             // Orange 800
+  --color-error: #{vars.$red-800};                  // Red 800
 }
 
-.btn {
+@plugin "daisyui/theme" {
+  name: "light";                             // Light Theme
+  --color-primary: #{vars.$purple-400};             // Purple 400
+  --color-secondary: #{vars.$teal-700};             // Teal 700
+  --color-accent: #{vars.$green-400};               // Green 400
+  --color-neutral: #{vars.$grey-50};                // Grey 50 
+  --color-base-100: #{vars.$light-base-100};        // Adjusted base from purple-50
+  --color-base-200: #{vars.$light-base-200};
+  --color-base-300: #{vars.$light-base-300};
+
+  --color-info: #{vars.$blue-400};                  // Blue 400
+  --color-success: #{vars.$green-500};              // Green 500
+  --color-warning: #{vars.$orange-600};             // Orange 600
+  --color-error: #{vars.$red-500};                  // Red 500
+}
+
+@theme {
+  --font-sans: "Louis George Cafe", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-serif: "Louis George Cafe", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: "Louis George Cafe", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@utility btn {
   svg {
     @apply size-[1.4em];
+  }
+
+  @apply rounded-box;
+}
+
+.lite-bg {
+  @apply bg-base-200;
+ 
+  @variant dark {
+    @apply bg-base-100;
   }
 }
 

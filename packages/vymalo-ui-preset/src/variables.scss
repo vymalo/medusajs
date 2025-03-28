@@ -1,0 +1,45 @@
+// Material Color Variables 
+
+// Purple
+$purple-50:  #F3E5F5; // for base-content adjustments in dark/light themes
+$purple-400: #AB47BC; // light theme primary
+$purple-500: #9C27B0; // dark theme primary
+$purple-900: #4A148C; // used to compute dark base colors (adjusted) 
+
+// Teal
+$teal-400: #26A69A; // dark theme secondary
+$teal-700: #00796B; // light theme secondary 
+
+// Green
+$green-400: #66BB6A; // light theme accent
+$green-500: #4CAF50; // dark theme accent and light theme success
+$green-600: #43A047; // dark theme success 
+
+// Grey
+$grey-50:  #FAFAFA; // light theme neutral
+$grey-900: #212121; // dark theme neutral 
+
+// Blue
+$blue-400: #42A5F5; // light theme info
+$blue-700: #1976D2; // dark theme info 
+
+// Orange
+$orange-600: #FB8C00; // light theme warning
+$orange-800: #EF6C00; // dark theme warning 
+
+// Red
+$red-500: #F44336; // light theme error
+$red-800: #C62828; // dark theme error 
+
+// Adjusted base colors for dark theme (computed manually from purple-900)
+// These are approximations:
+$dark-base-100:    #1B1424;
+$dark-base-200:    #121920;
+$dark-base-300:    #10161B;
+$dark-base-content: #FAF7FB; // adjusted from purple-50 with +5% lightness 
+
+// Adjusted base colors for light theme (computed manually from purple-50)
+// Again, these approximations are based on slight lightness and saturation tweaks:
+$light-base-100: #F4E6F4;
+$light-base-200: #F3E4F3;
+$light-base-300: #F2E3F2;
