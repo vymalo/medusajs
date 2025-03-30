@@ -34,12 +34,18 @@ $red-800: #C62828; // dark theme error
 // Adjusted base colors for dark theme (computed manually from purple-900)
 // These are approximations:
 $dark-base-100:    #1B1424;
-$dark-base-200:    #121920;
-$dark-base-300:    #10161B;
+//$dark-base-200:    #121920;
+//$dark-base-300:    #10161B;
 $dark-base-content: #FAF7FB; // adjusted from purple-50 with +5% lightness 
 
 // Adjusted base colors for light theme (computed manually from purple-50)
 // Again, these approximations are based on slight lightness and saturation tweaks:
 $light-base-100: #F4E6F4;
-$light-base-200: #F3E4F3;
-$light-base-300: #F2E3F2;
+//$light-base-200: #F3E4F3;
+//$light-base-300: #F2E3F2;
+
+
+/// Radius
+$radius-selector: 1.25rem;
+$radius-field: 0.5rem;
+$radius-box: 0.75rem;

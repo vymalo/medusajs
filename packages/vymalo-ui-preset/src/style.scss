@@ -1,51 +1,79 @@
 @use 'variables' as vars;
+@use "sass:color";
 
 @import url("https://s3.ssegning.me/home/fonts/louis-george-cafe/99travl-font.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 @plugin "@tailwindcss/typography";
 @plugin "tailwindcss-radix";
 
 @plugin "daisyui" {
-  themes: light --default,
-  dark --prefersdark;
-
+  themes: false;
   logs: false;
 }
 
 @plugin "daisyui/theme" {
   name: "dark";                              // Dark Theme
+  prefersdark: false;
+  color-scheme: dark;
   --color-primary: #{vars.$purple-500};             // Purple (default intensity: 500)
   --color-secondary: #{vars.$teal-400};             // Teal 400
   --color-accent: #{vars.$green-500};               // Green 500
   --color-neutral: #{vars.$grey-900};               // Grey 900 
   --color-base-100: #{vars.$dark-base-100};         // Adjusted base from purple-900
-  --color-base-200: #{vars.$dark-base-200};
-  --color-base-300: #{vars.$dark-base-300};
+  --color-base-200: #{color.adjust(vars.$dark-base-100, $lightness: -5%, $saturation: -5%)};
+  --color-base-300: #{color.adjust(vars.$dark-base-100, $lightness: -10%, $saturation: -10%)};
+
   --color-base-content: #{vars.$dark-base-content}; // Adjusted from purple-50 
   --color-info: #{vars.$blue-700};                  // Blue 700
   --color-success: #{vars.$green-600};              // Green 600
   --color-warning: #{vars.$orange-800};             // Orange 800
   --color-error: #{vars.$red-800};                  // Red 800
+  /* border radius */
+  --radius-selector: #{vars.$radius-selector};
+  --radius-field: #{vars.$radius-field};
+  --radius-box: #{vars.$radius-box};
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
 }
 
 @plugin "daisyui/theme" {
   name: "light";                             // Light Theme
+  default: true;
+  color-scheme: light;
   --color-primary: #{vars.$purple-400};             // Purple 400
   --color-secondary: #{vars.$teal-700};             // Teal 700
   --color-accent: #{vars.$green-400};               // Green 400
   --color-neutral: #{vars.$grey-50};                // Grey 50 
   --color-base-100: #{vars.$light-base-100};        // Adjusted base from purple-50
-  --color-base-200: #{vars.$light-base-200};
-  --color-base-300: #{vars.$light-base-300};
+  --color-base-200: #{color.adjust(vars.$light-base-100, $lightness: 5%, $saturation: 5%)};
+  --color-base-300: #{color.adjust(vars.$light-base-100, $lightness: 10%, $saturation: 10%)};
 
   --color-info: #{vars.$blue-400};                  // Blue 400
   --color-success: #{vars.$green-500};              // Green 500
   --color-warning: #{vars.$orange-600};             // Orange 600
   --color-error: #{vars.$red-500};                  // Red 500
+  /* border radius */
+  --radius-selector: #{vars.$radius-selector};
+  --radius-field: #{vars.$radius-field};;
+  --radius-box: #{vars.$radius-box};
+
+  /* border size */
+  --border: 1px;
+
+  /* effects */
+  --depth: 1;
+  --noise: 0;
 }
 
 @theme {
-  --font-sans: "Louis George Cafe", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-roboto: "Roboto", sans-serif;
+  --font-sans: "Louis George Cafe", sans-serif;
   --font-serif: "Louis George Cafe", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "Louis George Cafe", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -54,13 +82,11 @@
   svg {
     @apply size-[1.4em];
   }
-
-  @apply rounded-box;
 }
 
 .lite-bg {
   @apply bg-base-200;
- 
+
   @variant dark {
     @apply bg-base-100;
   }
@@ -87,7 +113,7 @@ article {
 }
 
 .app-title {
-  @apply text-3xl font-bold md:text-4xl;
+  @apply text-3xl font-bold md:text-4xl font-roboto;
 }
 
 main {
