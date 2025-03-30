@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-meilisearch",
-  "version": "1.0.14-rc.4",
+  "version": "1.0.14-rc.5",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
