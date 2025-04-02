@@ -1,4 +1,4 @@
-import type { Client } from 'minio';
+import { Client } from 'minio';
 import type {
 	Logger,
 	ProviderDeleteFileDTO,
@@ -6,13 +6,15 @@ import type {
 	ProviderGetFileDTO,
 	ProviderUploadFileDTO,
 } from '@medusajs/framework/types';
-import { AbstractFileProviderService } from '@medusajs/framework/utils';
+import {
+	AbstractFileProviderService,
+	MedusaError,
+} from '@medusajs/framework/utils';
 import { parse } from 'path';
 import type { Options } from './types';
 
 type InjectedDependencies = {
 	logger: Logger;
-	minio_client: Client;
 };
 
 export default class MinioService extends AbstractFileProviderService {
@@ -23,16 +25,40 @@ export default class MinioService extends AbstractFileProviderService {
 	protected readonly logger: Logger;
 	protected readonly options: Options;
 
-	constructor(
-		{ logger, minio_client }: InjectedDependencies,
-		options: Options
-	) {
+	constructor({ logger }: InjectedDependencies, options: Options) {
 		// @ts-ignore
 		super(...arguments);
 
 		this.logger = logger;
-		this.client = minio_client;
 		this.options = options;
+
+		const url = new URL(options.endpoint);
+		this.client = new Client({
+			endPoint: url.hostname,
+			port: parseInt(url.port),
+			useSSL: url.protocol === 'https:',
+			accessKey: options.access_key_id,
+			secretKey: options.secret_access_key,
+		});
+	}
+
+	static validateOptions(options: Partial<Options>) {
+		const requiredFields: (keyof Options)[] = [
+			'endpoint',
+			'cdn_url',
+			'bucket',
+			'access_key_id',
+			'secret_access_key',
+			'download_url_duration',
+		];
+		requiredFields.forEach((field) => {
+			if (!options[field]) {
+				throw new MedusaError(
+					MedusaError.Types.INVALID_DATA,
+					`Minio file service is missing required field: ${field}`
+				);
+			}
+		});
 	}
 
 	public async upload(

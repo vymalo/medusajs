@@ -26,8 +26,8 @@ export type KeycloakOptions = {
 };
 
 export default class KeycloakService extends AbstractAuthModuleProvider {
-	static identifier = 'vymalo-keycloak';
-	static DISPLAY_NAME = 'Keycloak Authentication';
+	public static identifier = 'vymalo-keycloak';
+	public static DISPLAY_NAME = 'Keycloak Authentication';
 	protected options: KeycloakOptions;
 	protected logger_: Logger;
 

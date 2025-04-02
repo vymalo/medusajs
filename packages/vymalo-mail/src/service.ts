@@ -16,8 +16,8 @@ type InjectedDependencies = {
 };
 
 export default class MailService extends AbstractNotificationProviderService {
-	static identifier = 'vymalo-mail';
-	static DISPLAY_NAME = 'Simple Mail Notification';
+	public static identifier = 'vymalo-mail';
+	public static DISPLAY_NAME = 'Simple Mail Notification';
 	protected readonly logger: Logger;
 	protected readonly options: Options;
 	protected readonly email: Email;
