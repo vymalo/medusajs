@@ -5045,7 +5045,7 @@ __metadata:
   dependencies:
     "@typescript-eslint/eslint-plugin": "npm:^8.10.0"
     "@typescript-eslint/parser": "npm:^8.10.0"
-    daisyui: "npm:^5.0.12"
+    daisyui: "npm:^5.0.18"
     eslint: "npm:8"
     eslint-config-next: "npm:^14.2.15"
     eslint-config-prettier: "npm:^9.1.0"
@@ -5063,7 +5063,7 @@ __metadata:
     "@tailwindcss/forms": "npm:^0.5.10"
     "@tailwindcss/typography": "npm:^0.5.16"
     colord: "npm:^2.9.3"
-    daisyui: "npm:^5.0.12"
+    daisyui: "npm:^5.0.18"
     tailwindcss: "npm:^4"
     tailwindcss-radix: "npm:^4"
   languageName: unknown
@@ -6393,10 +6393,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"daisyui@npm:^5.0.12":
-  version: 5.0.12
-  resolution: "daisyui@npm:5.0.12"
-  checksum: 10c0/da3ca893b1ea7828ab3844253b7b70aeb02aeb346956200961141e3db4c7b5a4b2ddedcf8affc6f4cc9bc5fe0236c41522595f383e8db68d3e61a9226ab5e41b
+"daisyui@npm:^5.0.18":
+  version: 5.0.18
+  resolution: "daisyui@npm:5.0.18"
+  checksum: 10c0/918a996aeaf9936e9491532f0a944e3ba30d7baab8befd7b4069fb23fb03b7ad998a9b838c97b7eb2bf55aa3b3c8952b9cdeadff9957e0e2c41ffca28d1fb8f8
   languageName: node
   linkType: hard
 
