@@ -28,7 +28,7 @@
     "minio": "^8.0.5"
   },
   "devDependencies": {
-    "@medusajs/framework": "^2.6.1",
+    "@medusajs/framework": "^2.7.0",
     "@types/fs-extra": "^11.0.4"
   }
 }
