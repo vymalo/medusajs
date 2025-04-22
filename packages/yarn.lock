@@ -1532,7 +1532,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/utils@npm:2.7.0":
+"@medusajs/utils@npm:2.7.0, @medusajs/utils@npm:^2.7.0":
   version: 2.7.0
   resolution: "@medusajs/utils@npm:2.7.0"
   dependencies:
@@ -1559,36 +1559,6 @@ __metadata:
     express: ^4.21.0
     pg: ^8.13.0
   checksum: 10c0/ea93da195a74392ab44abd87f6e1dbdf9f76ce35d9ed590a22d8358e8cd08a40303981f41dc61d3febdeb095dbea4a875efd11bad7e8e01a7c916569411ac328
-  languageName: node
-  linkType: hard
-
-"@medusajs/utils@npm:^2.6.1":
-  version: 2.6.1
-  resolution: "@medusajs/utils@npm:2.6.1"
-  dependencies:
-    "@graphql-codegen/core": "npm:^4.0.2"
-    "@graphql-codegen/typescript": "npm:^4.0.9"
-    "@graphql-tools/merge": "npm:^9.0.7"
-    "@graphql-tools/schema": "npm:^10.0.6"
-    "@medusajs/types": "npm:2.6.1"
-    "@types/pluralize": "npm:^0.0.33"
-    bignumber.js: "npm:^9.1.2"
-    dotenv: "npm:^16.4.5"
-    dotenv-expand: "npm:^11.0.6"
-    graphql: "npm:^16.9.0"
-    jsonwebtoken: "npm:^9.0.2"
-    pg-connection-string: "npm:^2.7.0"
-    pluralize: "npm:^8.0.0"
-    ulid: "npm:^2.3.0"
-  peerDependencies:
-    "@mikro-orm/core": 6.4.3
-    "@mikro-orm/knex": 6.4.3
-    "@mikro-orm/migrations": 6.4.3
-    "@mikro-orm/postgresql": 6.4.3
-    awilix: ^8.0.1
-    express: ^4.21.0
-    pg: ^8.13.0
-  checksum: 10c0/d423a396a3a1a821e94853a0afad9e6662c66542aa41a6021dae20f0c5bb3e53f2c68252e13d970b6da3d00589cf483f6146ee52662fecc888e0dd1a8b71f2a2
   languageName: node
   linkType: hard
 
@@ -5042,7 +5012,7 @@ __metadata:
   dependencies:
     "@medusajs/framework": "npm:^2.7.0"
     "@medusajs/types": "npm:^2.6.1"
-    "@medusajs/utils": "npm:^2.6.1"
+    "@medusajs/utils": "npm:^2.7.0"
     awilix: "npm:^12.0.5"
     meilisearch: "npm:latest"
   languageName: unknown
@@ -5071,7 +5041,7 @@ __metadata:
     "@medusajs/js-sdk": "npm:^2.6.1"
     "@medusajs/types": "npm:^2.6.1"
     "@medusajs/ui": "npm:^4.0.7"
-    "@medusajs/utils": "npm:^2.6.1"
+    "@medusajs/utils": "npm:^2.7.0"
     "@tanstack/react-query": "npm:^5.71.5"
     "@types/lodash": "npm:^4.17.16"
     "@types/react": "npm:^19"
