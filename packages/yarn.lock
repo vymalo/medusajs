@@ -1334,15 +1334,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/core-flows@npm:^2.6.1":
-  version: 2.6.1
-  resolution: "@medusajs/core-flows@npm:2.6.1"
+"@medusajs/core-flows@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "@medusajs/core-flows@npm:2.7.0"
   dependencies:
     json-2-csv: "npm:^5.5.4"
   peerDependencies:
-    "@medusajs/framework": 2.6.1
+    "@medusajs/framework": 2.7.0
     awilix: ^8.0.1
-  checksum: 10c0/d7a5764d55ed9da7b5e049f4b579eca3ab6c57c21cc1905a40cf146d964177a523009435747bdb8b21e93efd56f86347bc8335351f1df28633ef019eefe99a11
+  checksum: 10c0/7a7774b4bb8879886fd90dc20a29ff716e2453307ac89bd0764964e10bdaab92aa15ddb7dfa38773c4294f531c691d76b8dc5df34d81bc9119930705343ee4af
   languageName: node
   linkType: hard
 
@@ -5066,7 +5066,7 @@ __metadata:
     "@hey-api/client-axios": "npm:^0.6.2"
     "@hey-api/openapi-ts": "npm:^0.64.13"
     "@medusajs/admin-sdk": "npm:^2.6.1"
-    "@medusajs/core-flows": "npm:^2.6.1"
+    "@medusajs/core-flows": "npm:^2.7.0"
     "@medusajs/framework": "npm:^2.7.0"
     "@medusajs/js-sdk": "npm:^2.6.1"
     "@medusajs/types": "npm:^2.6.1"
