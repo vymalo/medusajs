@@ -9610,9 +9610,9 @@ __metadata:
   linkType: hard
 
 "meilisearch@npm:latest":
-  version: 0.49.0
-  resolution: "meilisearch@npm:0.49.0"
-  checksum: 10c0/54d49e12e5f1c13464cf1cf2489749ce817ac0aeafafd2e51ccf171dcf003a63aca018d02668a01c1c42090908e442248999347a13f9fdb96032c5f2dd28e118
+  version: 0.50.0
+  resolution: "meilisearch@npm:0.50.0"
+  checksum: 10c0/c3ce5e92b519a164a6233c7d46ca588986435be409018c13dce65a9cd426d3c68b69de0110a84a769ef5da0c11d34270e6978c8f9a6fbc3647201458a248fb74
   languageName: node
   linkType: hard
 
