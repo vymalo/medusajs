@@ -1508,6 +1508,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@medusajs/types@npm:2.8.1":
+  version: 2.8.1
+  resolution: "@medusajs/types@npm:2.8.1"
+  dependencies:
+    bignumber.js: "npm:^9.1.2"
+  peerDependencies:
+    awilix: ^8.0.1
+    ioredis: ^5.4.1
+    vite: ^5 || ^6
+  peerDependenciesMeta:
+    ioredis:
+      optional: true
+    vite:
+      optional: true
+  checksum: 10c0/e6ef3d77f4516e1ae05ac7851443c1aabb22439a4c2b724ce763565fe392ab819a43adeb71be9f3a54e6c303eff0f64708c757b845988c964bd612c49b93cbe0
+  languageName: node
+  linkType: hard
+
 "@medusajs/ui@npm:^4.0.7":
   version: 4.0.7
   resolution: "@medusajs/ui@npm:4.0.7"
@@ -1562,15 +1580,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/utils@npm:^2.6.1":
-  version: 2.6.1
-  resolution: "@medusajs/utils@npm:2.6.1"
+"@medusajs/utils@npm:^2.8.1":
+  version: 2.8.1
+  resolution: "@medusajs/utils@npm:2.8.1"
   dependencies:
     "@graphql-codegen/core": "npm:^4.0.2"
     "@graphql-codegen/typescript": "npm:^4.0.9"
     "@graphql-tools/merge": "npm:^9.0.7"
     "@graphql-tools/schema": "npm:^10.0.6"
-    "@medusajs/types": "npm:2.6.1"
+    "@medusajs/types": "npm:2.8.1"
     "@types/pluralize": "npm:^0.0.33"
     bignumber.js: "npm:^9.1.2"
     dotenv: "npm:^16.4.5"
@@ -1588,7 +1606,7 @@ __metadata:
     awilix: ^8.0.1
     express: ^4.21.0
     pg: ^8.13.0
-  checksum: 10c0/d423a396a3a1a821e94853a0afad9e6662c66542aa41a6021dae20f0c5bb3e53f2c68252e13d970b6da3d00589cf483f6146ee52662fecc888e0dd1a8b71f2a2
+  checksum: 10c0/c576e109d2781ec003b6ed74c2e2bfe3f10853d1267a6c3359c0ac76453ba17355bc7b0123c040ae690d4186d8b08cb33d15367e105566f4b6067fb066e24598
   languageName: node
   linkType: hard
 
@@ -5042,7 +5060,7 @@ __metadata:
   dependencies:
     "@medusajs/framework": "npm:^2.7.0"
     "@medusajs/types": "npm:^2.6.1"
-    "@medusajs/utils": "npm:^2.6.1"
+    "@medusajs/utils": "npm:^2.8.1"
     awilix: "npm:^12.0.5"
     meilisearch: "npm:latest"
   languageName: unknown
@@ -5071,7 +5089,7 @@ __metadata:
     "@medusajs/js-sdk": "npm:^2.6.1"
     "@medusajs/types": "npm:^2.6.1"
     "@medusajs/ui": "npm:^4.0.7"
-    "@medusajs/utils": "npm:^2.6.1"
+    "@medusajs/utils": "npm:^2.8.1"
     "@tanstack/react-query": "npm:^5.71.5"
     "@types/lodash": "npm:^4.17.16"
     "@types/react": "npm:^19"
