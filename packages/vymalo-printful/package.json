@@ -1,6 +1,6 @@
 {
   "name": "@vymalo/medusa-printful",
-  "version": "1.0.10-rc.6",
+  "version": "1.0.10",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vymalo/medusajs.git",
