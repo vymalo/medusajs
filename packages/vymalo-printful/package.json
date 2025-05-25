@@ -42,7 +42,7 @@
     "@medusajs/framework": "^2.8.2",
     "@medusajs/types": "^2.8.2",
     "@medusajs/utils": "^2.8.2",
-    "axios": "^1.8.4",
+    "axios": "^1.9.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
