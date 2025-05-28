@@ -29,7 +29,7 @@
     "email-templates": "^12.0.2"
   },
   "devDependencies": {
-    "@medusajs/framework": "^2.8.2",
+    "@medusajs/framework": "^2.8.3",
     "@types/email-templates": "^10.0.4",
     "@types/preview-email": "^3.1.0",
     "preview-email": "^3.1.0"
