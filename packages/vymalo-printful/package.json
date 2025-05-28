@@ -40,7 +40,7 @@
   "dependencies": {
     "@medusajs/core-flows": "^2.8.3",
     "@medusajs/framework": "^2.8.3",
-    "@medusajs/types": "^2.8.2",
+    "@medusajs/types": "^2.8.3",
     "@medusajs/utils": "^2.8.3",
     "axios": "^1.9.0",
     "lodash": "^4.17.21"

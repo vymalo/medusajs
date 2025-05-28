@@ -1497,7 +1497,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/types@npm:2.8.3":
+"@medusajs/types@npm:2.8.3, @medusajs/types@npm:^2.8.3":
   version: 2.8.3
   resolution: "@medusajs/types@npm:2.8.3"
   dependencies:
@@ -1512,24 +1512,6 @@ __metadata:
     vite:
       optional: true
   checksum: 10c0/bb10b7f562a5607db84bc01bc34e2e49711197961d6bf4728a8b4f8593e09f111b0186b7465680154e6212d72f3967dfe209af41a408fbf3386b95372188c05f
-  languageName: node
-  linkType: hard
-
-"@medusajs/types@npm:^2.8.2":
-  version: 2.8.2
-  resolution: "@medusajs/types@npm:2.8.2"
-  dependencies:
-    bignumber.js: "npm:^9.1.2"
-  peerDependencies:
-    awilix: ^8.0.1
-    ioredis: ^5.4.1
-    vite: ^5 || ^6
-  peerDependenciesMeta:
-    ioredis:
-      optional: true
-    vite:
-      optional: true
-  checksum: 10c0/dc554e2bd4dd292916ee8ce308879c6948fe0d1281cbb8b22fecc83091451eb08e5aa60829ed2c8bbbac2f6b9b8fd98d4bf394d9b9eb00330854314acf2c045f
   languageName: node
   linkType: hard
 
@@ -5037,7 +5019,7 @@ __metadata:
   resolution: "@vymalo/medusa-meilisearch@workspace:vymalo-meilisearch"
   dependencies:
     "@medusajs/framework": "npm:^2.8.3"
-    "@medusajs/types": "npm:^2.8.2"
+    "@medusajs/types": "npm:^2.8.3"
     "@medusajs/utils": "npm:^2.8.3"
     awilix: "npm:^12.0.5"
     meilisearch: "npm:latest"
@@ -5065,7 +5047,7 @@ __metadata:
     "@medusajs/core-flows": "npm:^2.8.3"
     "@medusajs/framework": "npm:^2.8.3"
     "@medusajs/js-sdk": "npm:^2.6.1"
-    "@medusajs/types": "npm:^2.8.2"
+    "@medusajs/types": "npm:^2.8.3"
     "@medusajs/ui": "npm:^4.0.7"
     "@medusajs/utils": "npm:^2.8.3"
     "@tanstack/react-query": "npm:^5.71.5"
