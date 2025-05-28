@@ -1515,6 +1515,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@medusajs/types@npm:2.8.3":
+  version: 2.8.3
+  resolution: "@medusajs/types@npm:2.8.3"
+  dependencies:
+    bignumber.js: "npm:^9.1.2"
+  peerDependencies:
+    awilix: ^8.0.1
+    ioredis: ^5.4.1
+    vite: ^5 || ^6
+  peerDependenciesMeta:
+    ioredis:
+      optional: true
+    vite:
+      optional: true
+  checksum: 10c0/bb10b7f562a5607db84bc01bc34e2e49711197961d6bf4728a8b4f8593e09f111b0186b7465680154e6212d72f3967dfe209af41a408fbf3386b95372188c05f
+  languageName: node
+  linkType: hard
+
 "@medusajs/ui@npm:^4.0.7":
   version: 4.0.7
   resolution: "@medusajs/ui@npm:4.0.7"
@@ -1539,7 +1557,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@medusajs/utils@npm:2.8.2, @medusajs/utils@npm:^2.8.2":
+"@medusajs/utils@npm:2.8.2":
   version: 2.8.2
   resolution: "@medusajs/utils@npm:2.8.2"
   dependencies:
@@ -1566,6 +1584,37 @@ __metadata:
     express: ^4.21.0
     pg: ^8.13.0
   checksum: 10c0/3b7139245591562ee913e5214405a5782bc8ba52b7b2b6a16fe185488bef70357ff340a66ca19be1316c4cd6e4322931b4c80b7e5fd10fc56648987a96b40579
+  languageName: node
+  linkType: hard
+
+"@medusajs/utils@npm:^2.8.3":
+  version: 2.8.3
+  resolution: "@medusajs/utils@npm:2.8.3"
+  dependencies:
+    "@graphql-codegen/core": "npm:^4.0.2"
+    "@graphql-codegen/typescript": "npm:^4.0.9"
+    "@graphql-tools/merge": "npm:^9.0.7"
+    "@graphql-tools/schema": "npm:^10.0.6"
+    "@medusajs/types": "npm:2.8.3"
+    "@types/pluralize": "npm:^0.0.33"
+    bignumber.js: "npm:^9.1.2"
+    dotenv: "npm:^16.4.5"
+    dotenv-expand: "npm:^11.0.6"
+    graphql: "npm:^16.9.0"
+    jsonwebtoken: "npm:^9.0.2"
+    pg-connection-string: "npm:^2.7.0"
+    pluralize: "npm:^8.0.0"
+    ulid: "npm:^2.3.0"
+    zod: "npm:3.22.4"
+  peerDependencies:
+    "@mikro-orm/core": 6.4.3
+    "@mikro-orm/knex": 6.4.3
+    "@mikro-orm/migrations": 6.4.3
+    "@mikro-orm/postgresql": 6.4.3
+    awilix: ^8.0.1
+    express: ^4.21.0
+    pg: ^8.13.0
+  checksum: 10c0/3947c8ad08647cbd0835ccb357feaa52d207af6fc450b0a601d3043d5b5bf8260fa90c1125aa57cfbfb754d658f921627554a07e20af32532b9b8cbfbb42ae6a
   languageName: node
   linkType: hard
 
@@ -5019,7 +5068,7 @@ __metadata:
   dependencies:
     "@medusajs/framework": "npm:^2.8.2"
     "@medusajs/types": "npm:^2.8.2"
-    "@medusajs/utils": "npm:^2.8.2"
+    "@medusajs/utils": "npm:^2.8.3"
     awilix: "npm:^12.0.5"
     meilisearch: "npm:latest"
   languageName: unknown
@@ -5048,7 +5097,7 @@ __metadata:
     "@medusajs/js-sdk": "npm:^2.6.1"
     "@medusajs/types": "npm:^2.8.2"
     "@medusajs/ui": "npm:^4.0.7"
-    "@medusajs/utils": "npm:^2.8.2"
+    "@medusajs/utils": "npm:^2.8.3"
     "@tanstack/react-query": "npm:^5.71.5"
     "@types/lodash": "npm:^4.17.16"
     "@types/react": "npm:^19"
