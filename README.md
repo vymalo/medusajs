@@ -10,21 +10,21 @@ This monorepo hosts a suite of MedusaJS plugins, each addressing specific needs 
 
 This project is structured as a monorepo using Yarn workspaces. Below is a list of the available packages, each providing unique features:
 
-* **[`@vymalo/medusa-apprise`](packages/vymalo-apprise/README.md:0)**: Enables multichannel notifications (email, SMS, etc.) through [Apprise](https://github.com/caronc/apprise), offering flexible configuration for various notification services.
-* **[`@vymalo/medusa-argon2`](packages/vymalo-argon2/README.md:0)**: Enhances password security by integrating the [Argon2](https://github.com/P-H-C/phc-winner-argon2) hashing algorithm, the winner of the Password Hashing Competition.
-* **[`@vymalo/medusa-keycloak`](packages/vymalo-keycloak/README.md:0)**: Provides seamless integration with [Keycloak](https://www.keycloak.org/) for robust identity and access management, supporting OAuth 2.0 / OpenID Connect.
-* **[`@vymalo/medusa-mail`](packages/vymalo-mail/README.md:0)**: Offers advanced email templating capabilities using [Nodemailer](https://nodemailer.com/) and [email-templates](https://github.com/forwardemail/email-templates), with support for previews, i18n, and various transports.
-* **[`@vymalo/medusa-meilisearch`](packages/vymalo-meilisearch/README.md:0)**: Integrates [Meilisearch](https://www.meilisearch.com/) for lightning-fast, typo-tolerant search experiences with real-time updates and advanced filtering.
-* **[`@vymalo/medusa-minio`](packages/vymalo-minio/README.md:0)**: Implements file storage using [MinIO](https://min.io/), a self-hosted, S3-compatible object storage solution, supporting public/private buckets and CDN integration.
-* **[`@vymalo/ui-preset`](packages/vymalo-ui-preset/README.md:0)**: A Tailwind CSS preset designed for Vymalo projects, providing a consistent styling foundation.
-* **[`@vymalo/medusa-webauthn`](packages/vymalo-webauthn/README.md:0)**: Enables passwordless authentication using the [WebAuthn](https://www.w3.org/TR/webauthn-2/) standard, supporting hardware and software security keys for enhanced security.
+* **[`@vymalo/medusa-apprise`](packages/vymalo-apprise/README.md)**: Enables multichannel notifications (email, SMS, etc.) through [Apprise](https://github.com/caronc/apprise), offering flexible configuration for various notification services.
+* **[`@vymalo/medusa-argon2`](packages/vymalo-argon2/README.md)**: Enhances password security by integrating the [Argon2](https://github.com/P-H-C/phc-winner-argon2) hashing algorithm, the winner of the Password Hashing Competition.
+* **[`@vymalo/medusa-keycloak`](packages/vymalo-keycloak/README.md)**: Provides seamless integration with [Keycloak](https://www.keycloak.org/) for robust identity and access management, supporting OAuth 2.0 / OpenID Connect.
+* **[`@vymalo/medusa-mail`](packages/vymalo-mail/README.md)**: Offers advanced email templating capabilities using [Nodemailer](https://nodemailer.com/) and [email-templates](https://github.com/forwardemail/email-templates), with support for previews, i18n, and various transports.
+* **[`@vymalo/medusa-meilisearch`](packages/vymalo-meilisearch/README.md)**: Integrates [Meilisearch](https://www.meilisearch.com/) for lightning-fast, typo-tolerant search experiences with real-time updates and advanced filtering.
+* **[`@vymalo/medusa-minio`](packages/vymalo-minio/README.md)**: Implements file storage using [MinIO](https://min.io/), a self-hosted, S3-compatible object storage solution, supporting public/private buckets and CDN integration.
+* **[`@vymalo/ui-preset`](packages/vymalo-ui-preset/README.md)**: A Tailwind CSS preset designed for Vymalo projects, providing a consistent styling foundation.
+* **[`@vymalo/medusa-webauthn`](packages/vymalo-webauthn/README.md)**: Enables passwordless authentication using the [WebAuthn](https://www.w3.org/TR/webauthn-2/) standard, supporting hardware and software security keys for enhanced security.
 
 ## Getting Started
 
 ### Prerequisites
 
 * Node.js (Version specified in individual package `package.json` files, generally >=20)
-* Yarn (Version 4.x, as specified in [`packages/package.json`](packages/package.json:20))
+* Yarn (Version 4.x, as specified in [`packages/package.json`](packages/package.json))
 * A MedusaJS project.
 
 ### Installation (Development & Contribution)
@@ -45,7 +45,7 @@ This project is structured as a monorepo using Yarn workspaces. Below is a list 
 
 ## Using a Plugin
 
-Each plugin is designed to be integrated into your MedusaJS application. For detailed installation, configuration, and usage instructions for a specific plugin, please refer to its individual `README.md` file located within its package directory (e.g., [`packages/vymalo-apprise/README.md`](packages/vymalo-apprise/README.md:0)).
+Each plugin is designed to be integrated into your MedusaJS application. For detailed installation, configuration, and usage instructions for a specific plugin, please refer to its individual `README.md` file located within its package directory (e.g., [`packages/vymalo-apprise/README.md`](packages/vymalo-apprise/README.md)).
 
 **General Steps:**
 
@@ -59,7 +59,7 @@ Each plugin is designed to be integrated into your MedusaJS application. For det
 
 2. **Configure the plugin** in your `medusa-config.js` or relevant configuration files as per the plugin's specific documentation.
 
-**Example:** To use the `@vymalo/medusa-keycloak` plugin, you would typically add it to the `modules` section of your MedusaJS configuration, as detailed in its [README](./packages/vymalo-keycloak/README.md:39).
+**Example:** To use the `@vymalo/medusa-keycloak` plugin, you would typically add it to the `modules` section of your MedusaJS configuration, as detailed in its [README](./packages/vymalo-keycloak/README.md).
 
 ## For New Users
 
@@ -78,7 +78,7 @@ We welcome contributions to enhance these plugins!
 
 1. Ensure you have followed the [Installation (Development & Contribution)](#installation-development--contribution) steps above.
 2. Navigate to the specific package you want to work on, e.g., `cd packages/vymalo-keycloak`.
-3. Each package has its own scripts defined in its `package.json` (e.g., [`packages/vymalo-keycloak/package.json`](packages/vymalo-keycloak/package.json:11)). These typically include:
+3. Each package has its own scripts defined in its `package.json` (e.g., [`packages/vymalo-keycloak/package.json`](packages/vymalo-keycloak/package.json)). These typically include:
     * `format`: To format the code (e.g., using Biome).
     * `build`: To build the package (e.g., using `tsc`).
     * `dev`: For local development, if applicable.

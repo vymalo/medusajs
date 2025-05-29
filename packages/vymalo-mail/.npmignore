@@ -1,3 +1,5 @@
-node_modules/
-src/
-tsconfig.json
+*
+!dist
+!LICENSE
+!package.json
+!README.md

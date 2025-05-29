@@ -1,5 +1,5 @@
-node_modules
-src
-.gitignore
-.npmignore
-tsconfig.json
+*
+!.medusa
+!LICENSE
+!package.json
+!README.md
