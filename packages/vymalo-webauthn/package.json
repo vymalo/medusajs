@@ -1,6 +1,5 @@
 {
 	"name": "@vymalo/medusa-webauthn",
-	"private": false,
 	"version": "1.0.0-rc.1",
 	"description": "A starter for Medusa projects.",
 	"author": {

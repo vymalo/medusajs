@@ -1,6 +1,5 @@
 {
 	"name": "@vymalo/medusa-meilisearch",
-	"private": false,
 	"version": "1.0.15",
 	"repository": {
 		"type": "git",
