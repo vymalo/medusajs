@@ -1,0 +1,10 @@
+@import url("https://s3.ssegning.me/home/fonts/louis-george-cafe/99travl-font.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+@plugin "@tailwindcss/typography";
+@plugin "tailwindcss-radix";
+
+@plugin "daisyui" {
+  themes: false;
+  logs: false;
+}

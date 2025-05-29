@@ -1,7 +1,7 @@
-import { variantKeys } from '@medusajs/utils';
 import type { ProductDTO } from '@medusajs/types';
+import { variantKeys } from '@medusajs/utils';
 
-const prefix = `variant`;
+const prefix = 'variant';
 
 export const transformProduct = (product: ProductDTO): Record<string, any> => {
 	const transformedProduct = { ...product } as Record<string, unknown>;
@@ -11,37 +11,35 @@ export const transformProduct = (product: ProductDTO): Record<string, any> => {
 			obj[`${prefix}_${key}`] = [];
 			return obj;
 		},
-		{} as Record<string, string[]>
+		{} as Record<string, string[]>,
 	);
 	initialObj[`${prefix}_options_value`] = [];
 
 	const flattenedVariantFields = (product.variants || []).reduce(
 		(obj, variant) => {
-			variantKeys.forEach((k) => {
+			for (const k of variantKeys) {
 				if (k === 'options' && variant[k]) {
 					const values = variant[k].map((option) => option.value);
 					obj[`${prefix}_options_value`] =
 						obj[`${prefix}_options_value`].concat(values);
-					return;
+					continue;
 				}
 				const variantVal = (variant as any)[k];
-				return variantVal && obj[`${prefix}_${k}`].push(variantVal);
-			});
+				variantVal && obj[`${prefix}_${k}`].push(variantVal);
+			}
 			return obj;
 		},
-		initialObj
+		initialObj,
 	);
 
-	transformedProduct.type_value = product.type && product.type.value;
-	transformedProduct.collection_title =
-		product.collection && product.collection.title;
-	transformedProduct.collection_handle =
-		product.collection && product.collection.handle;
+	transformedProduct.type_value = product.type?.value;
+	transformedProduct.collection_title = product.collection?.title;
+	transformedProduct.collection_handle = product.collection?.handle;
 	transformedProduct.tags_value = product.tags
 		? product.tags.map((t) => t.value)
 		: [];
 	transformedProduct.categories = (product?.categories || []).map(
-		(c) => c.name
+		(c) => c.name,
 	);
 
 	return {

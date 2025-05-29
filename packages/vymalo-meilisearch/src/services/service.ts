@@ -1,7 +1,5 @@
 import type { Logger, ProductDTO, SearchTypes } from '@medusajs/types';
 import { AbstractSearchService, SearchUtils } from '@medusajs/utils';
-import type { Options, SearchOption } from '../types';
-import { IMeilisearchService } from '../types';
 import type {
 	EnqueuedTask,
 	Index,
@@ -10,6 +8,8 @@ import type {
 	SearchParams,
 	SearchResponse,
 } from 'meilisearch' with { 'resolution-mode': 'import' };
+import type { Options, SearchOption } from '../types';
+import type { IMeilisearchService } from '../types';
 import { transformProduct } from '../utils';
 
 type InjectedDependencies = {
@@ -26,7 +26,7 @@ export default class MeiliSearchService<
 {
 	public static identifier = 'vymalo-meilisearch';
 	public static DISPLAY_NAME = 'Meilisearch Search';
-	isDefault: boolean = false;
+	isDefault = false;
 	public readonly defaultIndex: string = 'products';
 	protected readonly logger: Logger;
 	protected readonly client: MeiliSearch;
@@ -42,9 +42,9 @@ export default class MeiliSearchService<
 
 	async createIndex<O extends I = I>(
 		indexName: string = this.defaultIndex,
-		options: O
+		options: O,
 	): Promise<EnqueuedTask> {
-		return await this.client.createIndex(indexName, options);
+		return this.client.createIndex(indexName, options);
 	}
 
 	async getIndex<T extends P = P>(indexName: string): Promise<Index<T>> {
@@ -54,11 +54,11 @@ export default class MeiliSearchService<
 	async addDocuments<T extends P = P, D extends T = T>(
 		indexName: string,
 		documents: D[],
-		type: string
+		type: string,
 	): Promise<EnqueuedTask> {
 		const transformedDocuments = await this.getTransformedDocuments<T, D>(
 			type,
-			documents
+			documents,
 		);
 
 		return await this.client
@@ -69,11 +69,11 @@ export default class MeiliSearchService<
 	async replaceDocuments<T extends P = P, D extends T = T>(
 		indexName: string,
 		documents: D[],
-		type: string
+		type: string,
 	): Promise<EnqueuedTask> {
 		const transformedDocuments = await this.getTransformedDocuments<T, D>(
 			type,
-			documents
+			documents,
 		);
 
 		return await this.client
@@ -83,7 +83,7 @@ export default class MeiliSearchService<
 
 	async deleteDocument(
 		indexName: string,
-		document_id: string | number
+		document_id: string | number,
 	): Promise<EnqueuedTask> {
 		return await this.client.index(indexName).deleteDocument(document_id);
 	}
@@ -95,7 +95,7 @@ export default class MeiliSearchService<
 	async search<D extends P = P, S extends SearchParams = SearchParams>(
 		indexName: string,
 		query: string | null,
-		options: SearchOption
+		options: SearchOption,
 	): Promise<SearchResponse<D, S>> {
 		const { paginationOptions, filter, additionalOptions } = options;
 
@@ -106,7 +106,7 @@ export default class MeiliSearchService<
 
 	async updateSettings(
 		indexName: string,
-		settings: SearchTypes.IndexSettings
+		settings: SearchTypes.IndexSettings,
 	): Promise<EnqueuedTask> {
 		const indexSettings = settings.indexSettings || {};
 
@@ -117,7 +117,7 @@ export default class MeiliSearchService<
 
 	protected async upsertIndex(
 		indexName: string,
-		settings: SearchTypes.IndexSettings
+		settings: SearchTypes.IndexSettings,
 	): Promise<void> {
 		try {
 			await this.client.getIndex(indexName);
@@ -136,7 +136,7 @@ export default class MeiliSearchService<
 
 	protected async getTransformedDocuments<T extends P = P, R extends T = T>(
 		type: string,
-		documents: R[]
+		documents: R[],
 	): Promise<T[]> {
 		if (!documents?.length) {
 			return [];

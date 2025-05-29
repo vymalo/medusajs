@@ -1,0 +1,38 @@
+{
+	"name": "@vymalo/medusa-apprise",
+	"version": "1.0.0",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vymalo/medusajs.git",
+		"directory": "packages/vymalo-apprise"
+	},
+	"main": "dist/index.js",
+	"scripts": {
+		"format": "biome check --write ./src",
+		"prebuild": "npm run format",
+		"build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+	},
+	"keywords": [
+		"medusa",
+		"medusajs",
+		"medusa-apprise",
+		"apprise",
+		"apprise-api",
+		"medusa-plugin-notification",
+		"medusa-v2",
+		"medusa-plugin-integration"
+	],
+	"author": {
+		"name": "Vymalo",
+		"email": "selastlambou@gmail.com",
+		"url": "https://github.com/vymalo"
+	},
+	"license": "MIT",
+	"description": "",
+	"dependencies": {
+		"axios": "^1.9.0"
+	},
+	"devDependencies": {
+		"@medusajs/framework": "^2.8.2"
+	}
+}

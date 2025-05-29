@@ -1,17 +1,17 @@
-import {
+import type {
+	AuthIdentityProviderService,
 	AuthenticationInput,
 	AuthenticationResponse,
-	AuthIdentityProviderService,
 	Logger,
 } from '@medusajs/framework/types';
 import {
 	AbstractAuthModuleProvider,
-	isString,
 	MedusaError,
+	isString,
 } from '@medusajs/framework/utils';
+import type { AuthIdentityDTO } from '@medusajs/types/dist/auth/common';
+import jwt, { type JwtPayload } from 'jsonwebtoken';
 import { AuthorizationCode } from 'simple-oauth2';
-import jwt, { JwtPayload } from 'jsonwebtoken';
-import { AuthIdentityDTO } from '@medusajs/types/dist/auth/common';
 
 type InjectedDependencies = {
 	logger: Logger;
@@ -22,10 +22,11 @@ export type KeycloakOptions = {
 	realm: string;
 	clientId: string;
 	clientSecret: string;
-	redirect_uri: string;
+	default_redirect_uri: string;
+	scope?: string;
 };
 
-export default class KeycloakService extends AbstractAuthModuleProvider {
+export class KeycloakService extends AbstractAuthModuleProvider {
 	public static identifier = 'vymalo-keycloak';
 	public static DISPLAY_NAME = 'Keycloak Authentication';
 	protected options: KeycloakOptions;
@@ -60,16 +61,13 @@ export default class KeycloakService extends AbstractAuthModuleProvider {
 	async register(): Promise<AuthenticationResponse> {
 		throw new MedusaError(
 			MedusaError.Types.NOT_ALLOWED,
-			'Keycloak does not support direct registration. Use method `authenticate` instead.'
+			'Keycloak does not support direct registration. Use method `authenticate` instead.',
 		);
 	}
 
-	public async authenticate(
-		{
-			query: { redirect_uri, error, error_description, error_uri } = {},
-		}: AuthenticationInput,
-		authIdentityProviderService: AuthIdentityProviderService
-	): Promise<AuthenticationResponse> {
+	public async authenticate({
+		query: { redirect_uri, error, error_description, error_uri } = {},
+	}: AuthenticationInput): Promise<AuthenticationResponse> {
 		if (error) {
 			return {
 				success: false,
@@ -84,9 +82,10 @@ export default class KeycloakService extends AbstractAuthModuleProvider {
 
 	public async validateCallback(
 		req: AuthenticationInput,
-		authIdentityService: AuthIdentityProviderService
+		authIdentityService: AuthIdentityProviderService,
 	): Promise<AuthenticationResponse> {
-		const { code, state, error, scope } = req.query;
+		const { code, state, error, scope, error_description, error_uri } =
+			req.query ?? {};
 
 		if (!code || !state || !scope) {
 			return {
@@ -98,14 +97,14 @@ export default class KeycloakService extends AbstractAuthModuleProvider {
 		if (error) {
 			return {
 				success: false,
-				error: `${req.query.error_description}, read more at: ${req.query.error_uri}`,
+				error: `${error_description}, read more at: ${error_uri}`,
 			};
 		}
 
 		const client = this.getClient(this.options);
 
 		const { token: keycloakTokenObject } = await client.getToken({
-			redirect_uri: this.options.redirect_uri,
+			redirect_uri: this.options.default_redirect_uri,
 			code,
 			scope,
 		});
@@ -124,21 +123,16 @@ export default class KeycloakService extends AbstractAuthModuleProvider {
 			};
 		}
 
-		const found: AuthIdentityDTO | MedusaError = await authIdentityService
-			.retrieve({ entity_id })
-			.catch((error) => {
-				if (error.type === MedusaError.Types.NOT_FOUND) {
-					return null;
-				}
-				throw error;
-			});
+		const found: AuthIdentityDTO | MedusaError | null =
+			await authIdentityService
+				.retrieve({ entity_id })
+				.catch((error: MedusaError) => {
+					if (error.type === MedusaError.Types.NOT_FOUND) {
+						return null;
+					}
 
-		if ('id' in found) {
-			return {
-				success: true,
-				authIdentity: found,
-			};
-		}
+					return error;
+				});
 
 		if (!found) {
 			const created = await authIdentityService.create({
@@ -158,20 +152,27 @@ export default class KeycloakService extends AbstractAuthModuleProvider {
 			};
 		}
 
+		if ('id' in found) {
+			return {
+				success: true,
+				authIdentity: found,
+			};
+		}
+
 		return {
 			success: false,
 			error: found.message,
 		};
 	}
 
-	private async getRedirect(redirect_uri: string) {
+	private async getRedirect(redirect_uri: string | undefined) {
 		const client = this.getClient(this.options);
 
 		const state = Math.random().toString(36).substring(7);
-		const scope = 'openid email profile';
+		const scope = this.options.scope ?? 'openid email profile';
 
 		const authorizationUri = client.authorizeURL({
-			redirect_uri: redirect_uri ?? this.options.redirect_uri,
+			redirect_uri: redirect_uri ?? this.options.default_redirect_uri,
 			scope,
 			state,
 		});

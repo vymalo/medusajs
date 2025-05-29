@@ -1,12 +1,12 @@
 import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework';
+import type { ProductDTO } from '@medusajs/framework/types';
 import {
 	ContainerRegistrationKeys,
 	Modules,
 	ProductEvents,
 } from '@medusajs/framework/utils';
-import { ProductDTO } from '@medusajs/framework/types';
-import { MeilisearchModules } from '../types';
 import { SearchUtils } from '@medusajs/utils';
+import { MeilisearchModules } from '../types';
 
 export default async function productCreatedMeilisearch({
 	event: {
@@ -16,7 +16,7 @@ export default async function productCreatedMeilisearch({
 }: SubscriberArgs<ProductDTO>) {
 	const logger = container.resolve(ContainerRegistrationKeys.LOGGER);
 	logger.debug(
-		`Product ${productId} created or updated, adding to MeiliSearch`
+		`Product ${productId} created or updated, adding to MeiliSearch`,
 	);
 
 	const productModuleService = container.resolve(Modules.PRODUCT);
@@ -36,7 +36,7 @@ export default async function productCreatedMeilisearch({
 	await meiliSearchService.addDocuments(
 		'products',
 		[product],
-		SearchUtils.indexTypes.PRODUCTS
+		SearchUtils.indexTypes.PRODUCTS,
 	);
 
 	logger.debug(`Product ${product.id} added to MeiliSearch`);

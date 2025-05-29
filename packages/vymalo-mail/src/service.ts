@@ -1,4 +1,4 @@
-import {
+import type {
 	Logger,
 	ProviderSendNotificationDTO,
 	ProviderSendNotificationResultsDTO,
@@ -7,8 +7,8 @@ import {
 	AbstractNotificationProviderService,
 	isString,
 } from '@medusajs/framework/utils';
-import { Options } from './types';
 import type Email from 'email-templates';
+import type { Options } from './types';
 
 type InjectedDependencies = {
 	logger: Logger;
@@ -22,7 +22,10 @@ export default class MailService extends AbstractNotificationProviderService {
 	protected readonly options: Options;
 	protected readonly email: Email;
 
-	constructor({ logger, email_client }: InjectedDependencies, options: Options) {
+	constructor(
+		{ logger, email_client }: InjectedDependencies,
+		options: Options,
+	) {
 		// @ts-ignore
 		super(...arguments);
 
@@ -38,7 +41,7 @@ export default class MailService extends AbstractNotificationProviderService {
 	}
 
 	public async send(
-		notification: ProviderSendNotificationDTO
+		notification: ProviderSendNotificationDTO,
 	): Promise<ProviderSendNotificationResultsDTO> {
 		this.logger.info(`Sending email notification to ${notification.to}`);
 		if (notification.channel !== 'email') {
@@ -49,7 +52,7 @@ export default class MailService extends AbstractNotificationProviderService {
 			template: notification.template,
 			message: {
 				to: notification.to,
-				attachments: notification.attachments,
+				attachments: notification.attachments ?? undefined,
 			},
 			locals: notification.data,
 		});

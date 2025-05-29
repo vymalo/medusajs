@@ -1,37 +1,42 @@
 {
-  "name": "@vymalo/medusa-mail",
-  "version": "1.0.7",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vymalo/medusajs.git",
-    "directory": "packages/vymalo-mail"
-  },
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
-  },
-  "keywords": [
-    "medusa",
-    "medusajs",
-    "medusa-mail",
-    "email",
-    "email-templates",
-    "preview-email"
-  ],
-  "author": {
-    "name": "Vymalo",
-    "email": "selastlambou@gmail.com",
-    "url": "https://github.com/vymalo"
-  },
-  "license": "MIT",
-  "description": "",
-  "dependencies": {
-    "email-templates": "^12.0.2"
-  },
-  "devDependencies": {
-    "@medusajs/framework": "^2.8.3",
-    "@types/email-templates": "^10.0.4",
-    "@types/preview-email": "^3.1.0",
-    "preview-email": "^3.1.0"
-  }
+	"name": "@vymalo/medusa-mail",
+	"version": "1.0.7",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vymalo/medusajs.git",
+		"directory": "packages/vymalo-mail"
+	},
+	"main": "dist/index.js",
+	"scripts": {
+		"format": "biome check --write ./src",
+		"prebuild": "npm run format",
+		"build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+	},
+	"keywords": [
+		"medusa",
+		"medusajs",
+		"medusa-mail",
+		"email",
+		"email-templates",
+		"preview-email",
+		"medusa-plugin-notification",
+		"medusa-v2",
+		"medusa-plugin-integration"
+	],
+	"author": {
+		"name": "Vymalo",
+		"email": "selastlambou@gmail.com",
+		"url": "https://github.com/vymalo"
+	},
+	"license": "MIT",
+	"description": "",
+	"dependencies": {
+		"email-templates": "^12.0.2"
+	},
+	"devDependencies": {
+		"@medusajs/framework": "^2.8.3",
+		"@types/email-templates": "^10.0.4",
+		"@types/preview-email": "^3.1.0",
+		"preview-email": "^3.1.0"
+	}
 }

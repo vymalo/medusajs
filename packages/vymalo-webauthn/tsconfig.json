@@ -1,0 +1,15 @@
+{
+	"extends": "../tsconfig.base.json",
+	"compilerOptions": {
+		"rootDir": "./",
+		"outDir": "./.medusa/server"
+	},
+	"include": ["**/*", ".medusa/types/*"],
+	"exclude": [
+		"node_modules",
+		".medusa/server",
+		".medusa/admin",
+		"src/admin",
+		".cache"
+	]
+}

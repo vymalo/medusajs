@@ -6,3 +6,4 @@ tsconfig.tsbuildinfo
 generated
 
 .yarn
+.medusa

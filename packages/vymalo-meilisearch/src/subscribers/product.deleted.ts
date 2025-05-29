@@ -1,9 +1,9 @@
 import type { SubscriberArgs, SubscriberConfig } from '@medusajs/framework';
+import type { ProductDTO } from '@medusajs/framework/types';
 import {
 	ContainerRegistrationKeys,
 	ProductEvents,
 } from '@medusajs/framework/utils';
-import { ProductDTO } from '@medusajs/framework/types';
 import { MeilisearchModules } from '../types';
 
 export default async function productDeletedMeilisearch({

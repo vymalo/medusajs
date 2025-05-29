@@ -1,42 +1,46 @@
 {
-  "name": "@vymalo/ui-preset",
-  "version": "1.0.8",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vymalo/medusajs.git",
-    "directory": "packages/vymalo-ui-preset"
-  },
-  "scripts": {
-    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && mkdir -p dist && cp src/*.scss dist"
-  },
-  "keywords": [
-    "medusa",
-    "medusajs",
-    "medusa-commerce",
-    "medusa-commerce-plugin",
-    "ui-preset",
-    "tailwindcss",
-    "daisyui",
-    "tailwind-extended-shadows",
-    "tailwindcss-radix"
-  ],
-  "author": {
-    "name": "Vymalo",
-    "email": "selastlambou@gmail.com",
-    "url": "https://github.com/vymalo"
-  },
-  "license": "MIT",
-  "description": "",
-  "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/forms": "^0.5.10",
-    "@tailwindcss/typography": "^0.5.16",
-    "colord": "^2.9.3",
-    "daisyui": "^5.0.38",
-    "tailwindcss": "^4",
-    "tailwindcss-radix": "^4"
-  },
-  "files": [
-    "dist"
-  ]
+	"name": "@vymalo/ui-preset",
+	"version": "2.0.0-rc.1",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vymalo/medusajs.git",
+		"directory": "packages/vymalo-ui-preset"
+	},
+	"scripts": {
+		"build": "npm run clean && mkdir -p dist && cp src/*.scss dist",
+		"clean": "rm -rf dist"
+	},
+	"keywords": [
+		"medusa",
+		"medusajs",
+		"medusa-commerce",
+		"medusa-commerce-plugin",
+		"ui-preset",
+		"tailwindcss",
+		"daisyui",
+		"tailwind-extended-shadows",
+		"tailwindcss-radix"
+	],
+	"author": {
+		"name": "Vymalo",
+		"email": "selastlambou@gmail.com",
+		"url": "https://github.com/vymalo"
+	},
+	"license": "MIT",
+	"description": "",
+	"dependencies": {
+		"@tailwindcss/aspect-ratio": "^0.4.2",
+		"@tailwindcss/forms": "^0.5.10",
+		"@tailwindcss/typography": "^0.5.16",
+		"colord": "^2.9.3",
+		"daisyui": "^5.0.38",
+		"tailwindcss": "^4",
+		"tailwindcss-radix": "^4"
+	},
+	"files": [
+		"dist"
+	],
+	"prettier": {
+		"useTabs": false
+	}
 }

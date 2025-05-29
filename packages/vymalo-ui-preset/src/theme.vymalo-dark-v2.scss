@@ -1,0 +1,44 @@
+@use "variables" as vars;
+
+@plugin "daisyui/theme" {
+  name: "vymalo-dark-v2";
+  default: false;
+  prefersdark: true;
+  color-scheme: "dark";
+
+  /// Colors
+  --color-base-100: oklch(13% 0.028 261.692);
+  --color-base-200: oklch(21% 0.034 264.665);
+  --color-base-300: oklch(27% 0.033 256.848);
+  --color-base-content: oklch(96% 0.003 264.542);
+  --color-primary: oklch(77% 0.152 181.912);
+  --color-primary-content: oklch(27% 0.046 192.524);
+  --color-secondary: oklch(85% 0.199 91.936);
+  --color-secondary-content: oklch(28% 0.066 53.813);
+  --color-accent: oklch(0% 0 0);
+  --color-accent-content: oklch(100% 0 0);
+  --color-neutral: oklch(27% 0.033 256.848);
+  --color-neutral-content: oklch(98% 0.002 247.839);
+  --color-info: oklch(58% 0.158 241.966);
+  --color-info-content: oklch(97% 0.013 236.62);
+  --color-success: oklch(62% 0.194 149.214);
+  --color-success-content: oklch(98% 0.018 155.826);
+  --color-warning: oklch(64% 0.222 41.116);
+  --color-warning-content: oklch(98% 0.016 73.684);
+  --color-error: oklch(57% 0.245 27.325);
+  --color-error-content: oklch(97% 0.013 17.38);
+
+  /// Radius
+  --radius-selector: #{vars.$radius-selector};
+  --radius-field: #{vars.$radius-field};
+  --radius-box: #{vars.$radius-box};
+
+  /// Sizes
+  --size-selector: #{vars.$size-selector};
+  --size-field: #{vars.$size-field};
+
+  /// Misc
+  --border: #{vars.$border};
+  --depth: #{vars.$depth};
+  --noise: #{vars.$noise};
+}

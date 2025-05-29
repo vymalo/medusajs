@@ -1,39 +1,44 @@
 {
-  "name": "@vymalo/medusa-keycloak",
-  "version": "1.0.7",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vymalo/medusajs.git",
-    "directory": "packages/vymalo-keycloak"
-  },
-  "main": "dist/index.js",
-  "scripts": {
-    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
-  },
-  "keywords": [
-    "medusa",
-    "medusajs",
-    "keycloak",
-    "medusa-keycloak",
-    "auth",
-    "authentication",
-    "oauth2",
-    "medusa-oauth2"
-  ],
-  "author": {
-    "name": "Vymalo",
-    "email": "selastlambou@gmail.com",
-    "url": "https://github.com/vymalo"
-  },
-  "license": "MIT",
-  "description": "",
-  "dependencies": {
-    "jsonwebtoken": "^9.0.2",
-    "simple-oauth2": "^5.1.0"
-  },
-  "devDependencies": {
-    "@medusajs/framework": "^2.8.3",
-    "@types/jsonwebtoken": "^9.0.9",
-    "@types/simple-oauth2": "^5.0.7"
-  }
+	"name": "@vymalo/medusa-keycloak",
+	"version": "1.0.7",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vymalo/medusajs.git",
+		"directory": "packages/vymalo-keycloak"
+	},
+	"main": "dist/index.js",
+	"scripts": {
+		"format": "biome check --write ./src",
+		"prebuild": "npm run format",
+		"build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+	},
+	"keywords": [
+		"medusa",
+		"medusajs",
+		"keycloak",
+		"medusa-keycloak",
+		"auth",
+		"authentication",
+		"oauth2",
+		"medusa-oauth2",
+		"medusa-plugin-auth",
+		"medusa-v2",
+		"medusa-plugin-integration"
+	],
+	"author": {
+		"name": "Vymalo",
+		"email": "selastlambou@gmail.com",
+		"url": "https://github.com/vymalo"
+	},
+	"license": "MIT",
+	"description": "",
+	"dependencies": {
+		"jsonwebtoken": "^9.0.2",
+		"simple-oauth2": "^5.1.0"
+	},
+	"devDependencies": {
+		"@medusajs/framework": "^2.8.3",
+		"@types/jsonwebtoken": "^9.0.9",
+		"@types/simple-oauth2": "^5.0.7"
+	}
 }

@@ -1,44 +1,48 @@
 {
-  "name": "@vymalo/medusa-meilisearch",
-  "version": "1.0.14",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vymalo/medusajs.git",
-    "directory": "packages/vymalo-meilisearch"
-  },
-  "main": "dist/index.js",
-  "exports": {
-    "./package.json": "./package.json",
-    ".": "./dist/index.js",
-    "./subscribers/*": "./dist/subscribers/*.js",
-    "./workflows/*": "./dist/workflows/*.js",
-    "./jobs/*": "./dist/jobs/*.js"
-  },
-  "scripts": {
-    "build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
-  },
-  "keywords": [
-    "medusa",
-    "medusajs",
-    "meilisearch",
-    "medusa-meilisearch",
-    "medusa-search",
-    "search"
-  ],
-  "author": {
-    "name": "Vymalo",
-    "email": "selastlambou@gmail.com",
-    "url": "https://github.com/vymalo"
-  },
-  "license": "MIT",
-  "description": "",
-  "dependencies": {
-    "meilisearch": "latest"
-  },
-  "devDependencies": {
-    "@medusajs/framework": "^2.8.3",
-    "@medusajs/types": "^2.8.3",
-    "@medusajs/utils": "^2.8.3",
-    "awilix": "^12.0.5"
-  }
+	"name": "@vymalo/medusa-meilisearch",
+	"version": "1.0.15",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/vymalo/medusajs.git",
+		"directory": "packages/vymalo-meilisearch"
+	},
+	"main": "dist/index.js",
+	"exports": {
+		"./package.json": "./package.json",
+		".": "./dist/index.js",
+		"./subscribers/*": "./dist/subscribers/*.js",
+		"./workflows/*": "./dist/workflows/*.js",
+		"./jobs/*": "./dist/jobs/*.js"
+	},
+	"scripts": {
+		"format": "biome check --write ./src",
+		"build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+	},
+	"keywords": [
+		"medusa",
+		"medusajs",
+		"meilisearch",
+		"medusa-meilisearch",
+		"medusa-search",
+		"search",
+		"medusa-plugin-search",
+		"medusa-v2",
+		"medusa-plugin-integration"
+	],
+	"author": {
+		"name": "Vymalo",
+		"email": "selastlambou@gmail.com",
+		"url": "https://github.com/vymalo"
+	},
+	"license": "MIT",
+	"description": "",
+	"dependencies": {
+		"meilisearch": "latest"
+	},
+	"devDependencies": {
+		"@medusajs/framework": "^2.8.3",
+		"@medusajs/types": "^2.8.3",
+		"@medusajs/utils": "^2.8.3",
+		"awilix": "^12.0.5"
+	}
 }

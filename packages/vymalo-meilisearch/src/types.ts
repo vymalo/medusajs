@@ -1,9 +1,8 @@
-import type { AbstractSearchService } from '@medusajs/utils';
-import type {
-	Config,
-	Filter,
-} from 'meilisearch' with { 'resolution-mode': 'import' };
 import type { SearchTypes } from '@medusajs/types';
+import type { AbstractSearchService } from '@medusajs/utils';
+import type { Config, Filter } from 'meilisearch' with {
+	'resolution-mode': 'import',
+};
 
 export enum MeilisearchModules {
 	meilisearch = 'meilisearch',
