@@ -41,7 +41,7 @@ jobs:
           node-version: '22.x'
           registry-url: https://registry.npmjs.org/
           cache: 'yarn'  # Enable native Node module caching
-          cache-dependency-path: yarn.lock
+          cache-dependency-path: packages/yarn.lock
 
       # Restore cached dependencies
       - name: Restore Yarn cache
