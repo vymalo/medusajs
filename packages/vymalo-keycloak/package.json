@@ -1,5 +1,6 @@
 {
 	"name": "@vymalo/medusa-keycloak",
+	"private": false,
 	"version": "1.0.7",
 	"repository": {
 		"type": "git",
