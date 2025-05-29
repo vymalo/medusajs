@@ -1,6 +1,6 @@
 {
 	"name": "@vymalo/medusa-argon2",
-	"version": "1.0.7",
+	"version": "1.0.9",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/vymalo/medusajs.git",

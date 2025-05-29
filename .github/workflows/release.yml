@@ -50,7 +50,7 @@ jobs:
         run: yarn install --immutable
 
       - name: Build packages
-        run: npm run build -ws
+        run: npm -ws run build
 
       # Publishing with enhanced observability
       - name: Publish packages
