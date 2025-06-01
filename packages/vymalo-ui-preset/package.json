@@ -1,6 +1,6 @@
 {
 	"name": "@vymalo/ui-preset",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/vymalo/medusajs.git",
@@ -11,10 +11,6 @@
 		"clean": "rm -rf dist"
 	},
 	"keywords": [
-		"medusa",
-		"medusajs",
-		"medusa-commerce",
-		"medusa-commerce-plugin",
 		"ui-preset",
 		"tailwindcss",
 		"daisyui",

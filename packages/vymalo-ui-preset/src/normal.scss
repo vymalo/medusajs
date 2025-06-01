@@ -1,5 +1,6 @@
 @theme {
   --font-roboto: "Roboto", sans-serif;
+  --font-chivo: "Chivo", sans-serif;
   --font-sans: "Louis George Cafe", sans-serif, "Roboto", sans-serif;
   --font-serif: "Louis George Cafe", ui-serif, "Roboto", serif, Georgia, Cambria,
     "Times New Roman", Times, serif;
@@ -55,7 +56,7 @@ article {
 }
 
 .app-title {
-  @apply text-3xl font-bold md:text-4xl font-roboto;
+  @apply text-3xl font-bold md:text-4xl font-chivo;
 }
 
 main {
