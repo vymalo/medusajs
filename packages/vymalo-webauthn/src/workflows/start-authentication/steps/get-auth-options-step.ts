@@ -28,6 +28,8 @@ const getAuthOptions = createStep(
 				entity_id: username,
 				provider: WebAuthnAuth_ID,
 			},
+		}, {
+			relations: ['provider_identities'],
 		});
 		if (!authIdentities.length) {
 			throw new MedusaError(
