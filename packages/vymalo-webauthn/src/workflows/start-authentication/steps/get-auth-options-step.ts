@@ -40,13 +40,18 @@ const getAuthOptions = createStep(
 
 		const [authIdentity] = authIdentities;
 
-		const { options, authIdentity: newAuthIdentity } =
+		const { options, providerEntity } =
 			await webauthnApiService.generateAuthenticationOptions(
 				authId,
 				authIdentity,
 			);
 
-		await authService.updateAuthIdentities(newAuthIdentity);
+		await authService.updateProviderIdentities({
+			id: providerEntity.id,
+			entity_id: providerEntity.entity_id,
+			provider_metadata: providerEntity.provider_metadata,
+			user_metadata: providerEntity.user_metadata,
+		});
 
 		return new StepResponse({
 			options,

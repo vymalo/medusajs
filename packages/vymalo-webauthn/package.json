@@ -1,6 +1,6 @@
 {
 	"name": "@vymalo/medusa-webauthn",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "A starter for Medusa projects.",
 	"repository": {
 		"type": "git",

@@ -91,7 +91,8 @@ class WebAuthnApiService {
 		authId: string,
 		authIdentity: AuthIdentityDTO,
 	) {
-		const meta = this.getProviderIdentity(authIdentity)?.provider_metadata;
+		const providerEntity = this.getProviderIdentity(authIdentity);
+		const meta = providerEntity?.provider_metadata;
 
 		if (!meta) {
 			throw new MedusaError(
@@ -116,7 +117,7 @@ class WebAuthnApiService {
 			[authId]: options,
 		};
 
-		return { options, authIdentity };
+		return { options, providerEntity };
 	}
 
 	public async verifyRegistration({
