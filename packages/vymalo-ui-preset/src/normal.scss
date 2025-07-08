@@ -1,13 +1,13 @@
 @theme {
-  --font-roboto: "Roboto", sans-serif;
-  --font-chivo: "Chivo", sans-serif;
-  --font-sans: "Louis George Cafe", sans-serif, "Roboto", sans-serif;
-  --font-serif: "Louis George Cafe", ui-serif, "Roboto", serif, Georgia, Cambria,
-    "Times New Roman", Times, serif;
-  --font-mono: "Louis George Cafe", ui-monospace, "Roboto", SFMono-Regular,
-    Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-dm: "DM Serif Text", serif;
+  --font-nunito: "Nunito", sans-serif;
+  --font-body: "Montserrat", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-serif: "Montserrat", sans-serif;
+  --font-mono: "Montserrat", sans-serif,
+  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --animate-wiggle: wiggle 3s ease-in-out;
+  --animate-wiggle: wiggle 5s ease-in-out;
   @keyframes wiggle {
     0%,
     100% {
@@ -56,7 +56,7 @@ article {
 }
 
 .app-title {
-  @apply text-3xl font-bold md:text-4xl font-chivo;
+  @apply text-3xl font-bold md:text-4xl font-dm;
 }
 
 main {
