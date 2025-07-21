@@ -37,8 +37,8 @@
 		"simple-oauth2": "^5.1.0"
 	},
 	"devDependencies": {
-		"@medusajs/framework": "^2.8.3",
-		"@types/jsonwebtoken": "^9.0.9",
+		"@medusajs/framework": "^2.8.7",
+		"@types/jsonwebtoken": "^9.0.10",
 		"@types/simple-oauth2": "^5.0.7"
 	}
 }

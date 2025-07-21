@@ -33,11 +33,11 @@
 	"license": "MIT",
 	"description": "",
 	"dependencies": {
-		"argon2": "^0.43.0",
-		"superjson": "*"
+		"argon2": "^0.43.1",
+		"superjson": "^2.2.2"
 	},
 	"devDependencies": {
-		"@medusajs/framework": "^2.8.2",
+		"@medusajs/framework": "^2.8.7",
 		"@types/argon2": "^0.15.4"
 	}
 }
