@@ -1,6 +1,6 @@
 {
 	"name": "@vymalo/medusa-marketplace",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "A starter for Medusa projects.",
 	"repository": {
 		"type": "git",
