@@ -1,13 +1,13 @@
 import type {
-	AuthIdentityProviderService,
 	AuthenticationInput,
 	AuthenticationResponse,
+	AuthIdentityProviderService,
 	Logger,
 } from '@medusajs/framework/types';
 import {
 	AbstractAuthModuleProvider,
-	MedusaError,
 	isString,
+	MedusaError,
 } from '@medusajs/framework/utils';
 import type { AuthIdentityDTO } from '@medusajs/types/dist/auth/common';
 import jwt, { type JwtPayload } from 'jsonwebtoken';
@@ -61,12 +61,13 @@ export class KeycloakService extends AbstractAuthModuleProvider {
 	async register(): Promise<AuthenticationResponse> {
 		throw new MedusaError(
 			MedusaError.Types.NOT_ALLOWED,
-			'Keycloak does not support direct registration. Use method `authenticate` instead.',
+			'Keycloak does not support direct registration. Use method `authenticate` instead.'
 		);
 	}
 
 	public async authenticate({
 		query: { redirect_uri, error, error_description, error_uri } = {},
+		body: { kc_idp_hint } = {}
 	}: AuthenticationInput): Promise<AuthenticationResponse> {
 		if (error) {
 			return {
@@ -75,14 +76,14 @@ export class KeycloakService extends AbstractAuthModuleProvider {
 			};
 		}
 
-		const { response } = await this.getRedirect(redirect_uri);
+		const { response } = await this.getRedirect(redirect_uri, kc_idp_hint);
 
 		return response;
 	}
 
 	public async validateCallback(
 		req: AuthenticationInput,
-		authIdentityService: AuthIdentityProviderService,
+		authIdentityService: AuthIdentityProviderService
 	): Promise<AuthenticationResponse> {
 		const { code, state, error, scope, error_description, error_uri } =
 			req.query ?? {};
@@ -165,7 +166,10 @@ export class KeycloakService extends AbstractAuthModuleProvider {
 		};
 	}
 
-	private async getRedirect(redirect_uri: string | undefined) {
+	private async getRedirect(
+		redirect_uri: string | undefined,
+		kc_idp_hint?: string
+	) {
 		const client = this.getClient(this.options);
 
 		const state = Math.random().toString(36).substring(7);
@@ -175,6 +179,7 @@ export class KeycloakService extends AbstractAuthModuleProvider {
 			redirect_uri: redirect_uri ?? this.options.default_redirect_uri,
 			scope,
 			state,
+			kc_idp_hint,
 		});
 
 		const response: AuthenticationResponse = {
@@ -192,7 +197,7 @@ export class KeycloakService extends AbstractAuthModuleProvider {
 		realm,
 	}: KeycloakOptions) {
 		const url = new URL(kcUrl);
-		return new AuthorizationCode({
+		return new AuthorizationCode<'kc_idp_hint' | 'client_id'>({
 			client: {
 				id: clientId,
 				secret: clientSecret,
