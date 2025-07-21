@@ -23,14 +23,17 @@ const getAuthOptions = createStep(
 		);
 
 		const authId = randomBytes(32).toString();
-		const authIdentities = await authService.listAuthIdentities({
-			provider_identities: {
-				entity_id: username,
-				provider: WebAuthnAuth_ID,
+		const authIdentities = await authService.listAuthIdentities(
+			{
+				provider_identities: {
+					entity_id: username,
+					provider: WebAuthnAuth_ID,
+				},
 			},
-		}, {
-			relations: ['provider_identities'],
-		});
+			{
+				relations: ['provider_identities'],
+			},
+		);
 		if (!authIdentities.length) {
 			throw new MedusaError(
 				MedusaError.Types.UNAUTHORIZED,

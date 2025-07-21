@@ -1,11 +1,18 @@
 {
-	"name": "@vymalo/medusa-webauthn",
-	"version": "1.0.2",
+	"name": "@vymalo/medusa-marketplace",
+	"version": "0.0.1",
 	"description": "A starter for Medusa projects.",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/vymalo/medusajs.git",
-		"directory": "packages/vymalo-webauthn"
+		"directory": "packages/vymalo-marketplace"
+	},
+	"scripts": {
+		"build": "medusa plugin:build",
+		"dev": "medusa plugin:develop",
+		"prepublishOnly": "medusa plugin:build",
+		"format": "biome check --write ./src",
+		"prebuild": "npm run format"
 	},
 	"author": {
 		"name": "Vymalo",
@@ -20,10 +27,8 @@
 		"./package.json": "./package.json",
 		"./workflows": "./.medusa/server/src/workflows/index.js",
 		"./.medusa/server/src/modules/*": "./.medusa/server/src/modules/*/index.js",
-		"./jobs/*": "./.medusa/server/src/jobs/*.js",
 		"./modules/*": "./.medusa/server/src/modules/*/index.js",
 		"./providers/*": "./.medusa/server/src/providers/*/index.js",
-		"./auth": "./.medusa/server/src/auth/index.js",
 		"./*": "./.medusa/server/src/*.js",
 		"./admin": {
 			"import": "./.medusa/server/src/admin/index.mjs",
@@ -32,25 +37,13 @@
 		}
 	},
 	"keywords": [
-		"medusa",
-		"medusajs",
-		"webauthn",
-		"medusa-webauthn",
-		"auth",
-		"authentication",
-		"webauthn",
-		"medusa-webauthn",
-		"medusa-plugin-auth",
-		"medusa-v2",
-		"medusa-plugin-integration"
+		"sqlite",
+		"postgres",
+		"typescript",
+		"ecommerce",
+		"headless",
+		"medusa"
 	],
-	"scripts": {
-		"build": "medusa plugin:build",
-		"dev": "medusa plugin:develop",
-		"prepublishOnly": "medusa plugin:build",
-		"format": "biome check --write ./src",
-		"prebuild": "npm run format"
-	},
 	"devDependencies": {
 		"@medusajs/admin-sdk": "^2.8.2",
 		"@medusajs/cli": "^2.8.2",
@@ -66,12 +59,10 @@
 		"@mikro-orm/migrations": "^6.4.3",
 		"@mikro-orm/postgresql": "^6.4.3",
 		"@swc/core": "^1.5.7",
-		"@types/cors": "^2.8.18",
 		"@types/node": "^20.0.0",
 		"@types/react": "^18.3.2",
 		"@types/react-dom": "^18.2.25",
 		"awilix": "^8.0.1",
-		"cors": "^2.8.5",
 		"pg": "^8.13.0",
 		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
@@ -99,10 +90,5 @@
 	},
 	"engines": {
 		"node": ">=20"
-	},
-	"dependencies": {
-		"@simplewebauthn/server": "^13.1.1",
-		"@simplewebauthn/types": "^12.0.0",
-		"superjson": "^2.2.2"
 	}
 }
