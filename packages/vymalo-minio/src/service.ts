@@ -13,6 +13,7 @@ import {
 	AbstractFileProviderService,
 	MedusaError,
 } from '@medusajs/framework/utils';
+import { lookup } from 'mime-types';
 import { Client } from 'minio';
 import type { Options } from './types';
 
@@ -76,16 +77,29 @@ export class MinioService extends AbstractFileProviderService {
 				: this.options.bucket;
 
 		const customMeta = this.options.uploadMetadata?.(file) ?? {};
-		const content = Buffer.from(file.content, 'binary');
+		// Medusa's File module hands providers the file body as a BASE64 string
+		// (createFiles normalises it). Decoding it as 'binary' stores the base64
+		// TEXT, producing a corrupt object browsers can't render. Mirror the
+		// official local/s3 providers: decode base64 when the input round-trips as
+		// base64, otherwise treat it as a raw binary string.
+		const decoded = Buffer.from(file.content, 'base64');
+		const content =
+			decoded.toString('base64') === file.content
+				? decoded
+				: Buffer.from(file.content, 'binary');
+		// NOTE: minio's putObject only recognises HTTP header names (lower-case
+		// match against its supported-header list); any other key is silently
+		// turned into an `x-amz-meta-*` custom-metadata header. So `ContentType`
+		// would become `X-Amz-Meta-ContentType` and the real object Content-Type
+		// would default to `binary/octet-stream` (which, with nosniff, stops
+		// browsers rendering images). Use the actual header names instead.
 		await this.client.putObject(bucket, fileKey, content, undefined, {
-			ACL: isPrivate ? 'private' : 'public-read',
-			CacheControl: 'public, max-age=31536000, immutable',
-			ContentType: file.mimeType,
+			'x-amz-acl': isPrivate ? 'private' : 'public-read',
+			'Cache-Control': 'public, max-age=31536000, immutable',
+			'Content-Type':
+				file.mimeType || lookup(file.filename) || 'application/octet-stream',
+			'x-amz-meta-original-filename': file.filename,
 			...customMeta,
-			Metadata: {
-				'x-amz-meta-original-filename': file.filename,
-				...(customMeta.Metadata ?? {}),
-			},
 		});
 		this.logger.debug(`File ${file.filename} uploaded to Minio`);
 

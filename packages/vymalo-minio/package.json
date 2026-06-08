@@ -10,7 +10,7 @@
 	"scripts": {
 		"format": "biome check --write ./src",
 		"prebuild": "npm run format",
-		"build": "rm -rf {dist,tsconfig.tsbuildinfo} && tsc --build"
+		"build": "rm -rf dist tsconfig.tsbuildinfo && tsc --build"
 	},
 	"keywords": [
 		"medusa",
@@ -29,11 +29,13 @@
 	"license": "MIT",
 	"description": "",
 	"dependencies": {
-		"fs-extra": "^11.3.0",
-		"minio": "^8.0.5"
+		"fs-extra": "^11.3.5",
+		"mime-types": "^3.0.2",
+		"minio": "^8.0.7"
 	},
 	"devDependencies": {
-		"@medusajs/framework": "^2.8.7",
-		"@types/fs-extra": "^11.0.4"
+		"@medusajs/framework": "^2.15.5",
+		"@types/fs-extra": "^11.0.4",
+		"@types/mime-types": "^3.0.1"
 	}
 }
